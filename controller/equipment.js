@@ -110,4 +110,4 @@ const deleteEquipment = async (req,res,next) => {
 
 
 
-module.exports = {getAll, getSingle, createToDo, updateToDo, deleteToDo};
+module.exports = {getAll, getSingle, createEquipment, updateEquipment, deleteEquipment};
