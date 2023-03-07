@@ -16,26 +16,26 @@ const getAll = async (req, res, next) => {
 const getSingle = async (req, res, next) => {
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
-  const userId = new ObjectId(req.params.id);
+  const equipmentId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDb()
     .db('workOrderProject')
     .collection('equipment')
-    .find({ _id: userId });
+    .find({ _id: equipmentId });
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists[0]);
   });
 };
 
-const createToDo = async (req,res,next) => {
-  const todo = {
-    todaysDate: req.body.todaysDate,
-    task: req.body.task,
-    dueDate: req.body.dueDate,
-    class: req.body.class,
-    appointment: req.body.appointment,
-    activities: req.body.activities,
+const createEquipment = async (req,res,next) => {
+  const equipment = {
+    equipmentName: req.body.equipmentName,
+    datePurchased: req.body.datePurchased,
+    maintenance: req.body.maintenance,
+    available: req.body.available,
+    pastWorkOrders: req.body.pastWorkOrders,
+    location: req.body.location,
     notes: req.body.notes
   };
   try{
@@ -43,37 +43,37 @@ const createToDo = async (req,res,next) => {
     .getDb()
     .db('workOrderProject')
     .collection('equipment')
-    .insertOne(todo);
+    .insertOne(equipment);
     if (response.acknowledged) {
       res.status(201).json(response);
     }
   }catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while creating the todo.')
+      message: (response.error || 'Some error occurred while creating the equipment.')
       })
   }
 };
 
-const updateToDo = async (req,res,next) => {
+const updateEquipment = async (req,res,next) => {
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
-  const userId = new ObjectId(req.params.id);
-  const todo = {
-    todaysDate: req.body.todaysDate,
-    task: req.body.task,
-    dueDate: req.body.dueDate,
-    class: req.body.class,
-    appointment: req.body.appointment,
-    activities: req.body.activities,
+  const equipmentId = new ObjectId(req.params.id);
+  const equipment = {
+    equipmentName: req.body.equipmentName,
+    datePurchased: req.body.datePurchased,
+    maintenance: req.body.maintenance,
+    available: req.body.available,
+    pastWorkOrders: req.body.pastWorkOrders,
+    location: req.body.location,
     notes: req.body.notes
-    };
+  };
    try{
     const response = await mongodb
     .getDb()
     .db('workOrderProject')
     .collection('equipment')
-    .replaceOne({ _id: userId }, todo);
+    .replaceOne({ _id: equipmentId }, equipment);
     console.log(response);
     if (response.modifiedCount > 0) {
       res.status(204).send();
@@ -81,21 +81,21 @@ const updateToDo = async (req,res,next) => {
    } catch (error){
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while updating the todo.')
+      message: (response.error || 'Some error occurred while updating the equipment.')
       })
     }
 };
 
-const deleteToDo = async (req,res,next) => {
+const deleteEquipment = async (req,res,next) => {
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
-  const userId = new ObjectId(req.params.id);
+  const equipmentId = new ObjectId(req.params.id);
   try{
     const response = await mongodb
     .getDb()
     .db('workOrderProject')
     .collection('equipment')
-    .remove({ _id: userId }, true);
+    .remove({ _id: equipmentId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
       res.status(204).send(); 
@@ -103,11 +103,11 @@ const deleteToDo = async (req,res,next) => {
   }catch (error){
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while deleting the contact.')
+      message: (response.error || 'Some error occurred while deleting the equipment.')
       })
     }
 };
 
 
 
-module.exports = {getAll, getSingle, createToDo, updateToDo, deleteToDo};
+module.exports = {getAll, getSingle, createEquipment, updateEquipment, deleteEquipment};
