@@ -40,10 +40,17 @@
             "schema": {
               "type": "object",
               "properties": {
+<<<<<<< HEAD
                 "firstName": {
                   "example": "any"
                 },
                 "lastName": {
+=======
+                "fistName": {
+                  "example": "any"
+                },
+                "LastName": {
+>>>>>>> 79bdf0a (updated validator.js)
                   "example": "any"
                 },
                 "birthday": {
@@ -116,10 +123,17 @@
             "schema": {
               "type": "object",
               "properties": {
+<<<<<<< HEAD
                 "firstName": {
                   "example": "any"
                 },
                 "lastName": {
+=======
+                "fistName": {
+                  "example": "any"
+                },
+                "LastName": {
+>>>>>>> 79bdf0a (updated validator.js)
                   "example": "any"
                 },
                 "birthday": {
@@ -344,6 +358,7 @@
             "schema": {
               "type": "object",
               "properties": {
+<<<<<<< HEAD
                 "todaysDate": {
                   "example": "any"
                 },
@@ -360,6 +375,24 @@
                   "example": "any"
                 },
                 "activities": {
+=======
+                "equipmentName": {
+                  "example": "any"
+                },
+                "datePurchased": {
+                  "example": "any"
+                },
+                "maintenance": {
+                  "example": "any"
+                },
+                "available": {
+                  "example": "any"
+                },
+                "pastWorkOrders": {
+                  "example": "any"
+                },
+                "location": {
+>>>>>>> 79bdf0a (updated validator.js)
                   "example": "any"
                 },
                 "notes": {
@@ -420,6 +453,7 @@
             "schema": {
               "type": "object",
               "properties": {
+<<<<<<< HEAD
                 "todaysDate": {
                   "example": "any"
                 },
@@ -436,6 +470,24 @@
                   "example": "any"
                 },
                 "activities": {
+=======
+                "equipmentName": {
+                  "example": "any"
+                },
+                "datePurchased": {
+                  "example": "any"
+                },
+                "maintenance": {
+                  "example": "any"
+                },
+                "available": {
+                  "example": "any"
+                },
+                "pastWorkOrders": {
+                  "example": "any"
+                },
+                "location": {
+>>>>>>> 79bdf0a (updated validator.js)
                   "example": "any"
                 },
                 "notes": {

@@ -46,7 +46,11 @@ content-type: application/json
 {
     "firstName": "Keeley",
     "lastName": "Imlah",
+<<<<<<< HEAD
     "birthday": "na",
+=======
+    "birthday": "n/a",
+>>>>>>> 79bdf0a (updated validator.js)
     "department": "IT",
     "hireDate": "03/06/2023",
     "level": "1",
@@ -66,6 +70,7 @@ content-type: application/json
     "projectsAssigned": "final project"
 }
 ###DELETE CONTACT (DELETE)
+<<<<<<< HEAD
 DELETE   https://cse341-project2-k61i.onrender.com/admin HTTP/1.1
 ###
 ###
@@ -123,3 +128,6 @@ content-type: application/json
 }
 ###DELETE CONTACT (DELETE)
 DELETE   https://cse341-project2-k61i.onrender.com/employee HTTP/1.1
+=======
+DELETE   https://cse341-project2-k61i.onrender.com/admin HTTP/1.1
+>>>>>>> 79bdf0a (updated validator.js)
