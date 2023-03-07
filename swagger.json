@@ -40,10 +40,10 @@
             "schema": {
               "type": "object",
               "properties": {
-                "fistName": {
+                "firstName": {
                   "example": "any"
                 },
-                "LastName": {
+                "lastName": {
                   "example": "any"
                 },
                 "birthday": {
@@ -116,10 +116,10 @@
             "schema": {
               "type": "object",
               "properties": {
-                "fistName": {
+                "firstName": {
                   "example": "any"
                 },
-                "LastName": {
+                "lastName": {
                   "example": "any"
                 },
                 "birthday": {
