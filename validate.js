@@ -1,13 +1,13 @@
 const validator = require('./helper/validate.js');
-const validatedTask = async (req, res, next) => {
+const validatedAdmin = async (req, res, next) => {
     const validationRule = {
-        "todaysDate": "required|string",
-        "task": "required|string",
-        "dueDate": "required|string",
-        "class": "string",
-        "appointment": "string",
-        "activities": "string",
-        "notes": "string"
+        "firstName": "required|string",
+        "lastName": "required|string",
+        "birthday": "required|string",
+        "department": "required|string",
+        "hireDate": "required|string",
+        "level": "required|string",
+        "projectsAssigned": "string"
     };
 
     await validator(req.body, validationRule, {}, (err, status) => {
@@ -23,6 +23,73 @@ const validatedTask = async (req, res, next) => {
         }
     }).catch( err => console.log(err))
 }
+
+const validatedEmployee = async (req, res, next) => {
+    const validationRule = {
+        "firstName": "string",
+        "lastName": "string",
+        "level": "required|string",
+        "projectsAssigned": "string"
+    };
+
+    await validator(req.body, validationRule, {}, (err, status) => {
+        if (!status) {
+            res.status(412)
+                .send({
+                    success: false,
+                    message: 'Validation failed',
+                    data: err
+                });
+        } else {
+            next();
+        }
+    }).catch( err => console.log(err))
+}
+
+const validatedEquipment = async (req, res, next) => {
+    const validationRule = {
+        "firstName": "string",
+        "lastName": "string",
+        "level": "required|string",
+        "projectsAssigned": "string"
+    };
+
+    await validator(req.body, validationRule, {}, (err, status) => {
+        if (!status) {
+            res.status(412)
+                .send({
+                    success: false,
+                    message: 'Validation failed',
+                    data: err
+                });
+        } else {
+            next();
+        }
+    }).catch( err => console.log(err))
+}
+
+const validatedWorkOrder = async (req, res, next) => {
+    const validationRule = {
+        "firstName": "string",
+        "lastName": "string",
+        "level": "required|string",
+        "projectsAssigned": "string"
+    };
+
+    await validator(req.body, validationRule, {}, (err, status) => {
+        if (!status) {
+            res.status(412)
+                .send({
+                    success: false,
+                    message: 'Validation failed',
+                    data: err
+                });
+        } else {
+            next();
+        }
+    }).catch( err => console.log(err))
+}
+
 module.exports = {
-    validatedTask
+    validatedAdmin, validatedEmployee, validatedEquipment, validatedWorkOrder
 }
