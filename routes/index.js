@@ -4,6 +4,6 @@ router.use('/', require('./swagger'));
 router.use('/admin', require('./admin'))
 router.use('/employee', require('./employee'))
 router.use('/equipment', require('./equipment'))
-router.use('/workorder', require('./workorder'))
+router.use('/workorder', require('./workorders'))
 
 module.exports = router;

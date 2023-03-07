@@ -3,7 +3,7 @@ const router = express.Router();
 
 const validator = require('../validate');
 
-const todosController = require('../controller/todos');
+const todosController = require('../controller/workorders');
 
 router.get('/', todosController.getAll);
 

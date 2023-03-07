@@ -4,8 +4,8 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = async (req, res, next) => {
   const result = await mongodb
   .getDb()
-  .db('CSE341')
-  .collection('todos')
+  .db('workOrderProject')
+  .collection('wordOrders')
   .find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -19,8 +19,8 @@ const getSingle = async (req, res, next) => {
   const userId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDb()
-    .db('CSE341')
-    .collection('todos')
+    .db('workOrderProject')
+    .collection('wordOrders')
     .find({ _id: userId });
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -41,8 +41,8 @@ const createToDo = async (req,res,next) => {
   try{
     const response = await mongodb
     .getDb()
-    .db('CSE341')
-    .collection('todos')
+    .db('workOrderProject')
+    .collection('wordOrders')
     .insertOne(todo);
     if (response.acknowledged) {
       res.status(201).json(response);
@@ -71,8 +71,8 @@ const updateToDo = async (req,res,next) => {
    try{
     const response = await mongodb
     .getDb()
-    .db('CSE341')
-    .collection('todos')
+    .db('workOrderProject')
+    .collection('wordOrders')
     .replaceOne({ _id: userId }, todo);
     console.log(response);
     if (response.modifiedCount > 0) {
@@ -93,8 +93,8 @@ const deleteToDo = async (req,res,next) => {
   try{
     const response = await mongodb
     .getDb()
-    .db('CSE341')
-    .collection('todos')
+    .db('workOrderProject')
+    .collection('wordOrders')
     .remove({ _id: userId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
