@@ -9,9 +9,9 @@ router.get('/', employeeController.getAll);
 
 router.get('/:id', employeeController.getSingle);
 
-router.post('/', validator.validatedTask, employeeController.employee);
+router.post('/', validator.validatedEmployee, employeeController.employee);
 
-router.put('/:id', validator.validatedTask, employeeController.updateE);
+router.put('/:id', validator.validatedEmployee, employeeController.updateE);
 
 router.delete('/:id', employeeController.deleteE);
 

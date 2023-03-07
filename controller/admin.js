@@ -60,7 +60,7 @@ const updateUser = async (req,res,next) => {
   {return res.status(400).send("Invalid object id");}
   const userId = new ObjectId(req.params.id);
   const user = {
-    fistName: req.body.fistName,
+    firstName: req.body.firstName,
     LastName: req.body.LastName,
     birthday: req.body.birthday,
     department: req.body.department,

@@ -9,9 +9,9 @@ router.get('/', equipmentController.getAll);
 
 router.get('/:id', equipmentController.getSingle);
 
-router.post('/', validator.validatedTask, equipmentController.createEquipment);
+router.post('/', validator.validatedEquipment, todosController.createToDo);
 
-router.put('/:id', validator.validatedTask, equipmentController.updateEquipment);
+router.put('/:id', validator.validatedEquipment, todosController.updateToDo);
 
 router.delete('/:id', equipmentController.deleteEquipment);
 
