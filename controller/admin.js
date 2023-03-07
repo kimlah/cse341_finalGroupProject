@@ -30,8 +30,8 @@ const getSingle = async (req, res, next) => {
 
 const createUser = async (req,res,next) => {
   const user = {
-    fistName: req.body.fistName,
-    LastName: req.body.LastName,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
     birthday: req.body.birthday,
     department: req.body.department,
     hireDate: req.body.hireDate,
@@ -61,7 +61,7 @@ const updateUser = async (req,res,next) => {
   const userId = new ObjectId(req.params.id);
   const user = {
     firstName: req.body.firstName,
-    LastName: req.body.LastName,
+    lastName: req.body.lastName,
     birthday: req.body.birthday,
     department: req.body.department,
     hireDate: req.body.hireDate,
