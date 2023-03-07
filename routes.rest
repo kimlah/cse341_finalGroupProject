@@ -46,7 +46,7 @@ content-type: application/json
 {
     "firstName": "Keeley",
     "lastName": "Imlah",
-    "birthday": "n/a",
+    "birthday": "na",
     "department": "IT",
     "hireDate": "03/06/2023",
     "level": "1",
