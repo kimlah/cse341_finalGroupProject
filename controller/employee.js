@@ -4,8 +4,8 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = async (req, res, next) => {
   const result = await mongodb
   .getDb()
-  .db('CSE341')
-  .collection('todos')
+  .db('workOrderProject')
+  .collection('employees')
   .find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -19,8 +19,8 @@ const getSingle = async (req, res, next) => {
   const userId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDb()
-    .db('CSE341')
-    .collection('todos')
+    .db('workOrderProject')
+    .collection('employees')
     .find({ _id: userId });
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -28,21 +28,18 @@ const getSingle = async (req, res, next) => {
   });
 };
 
-const createToDo = async (req,res,next) => {
-  const todo = {
-    todaysDate: req.body.todaysDate,
-    task: req.body.task,
-    dueDate: req.body.dueDate,
-    class: req.body.class,
-    appointment: req.body.appointment,
-    activities: req.body.activities,
-    notes: req.body.notes
+const employee = async (req,res,next) => {
+  const employee = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    level: req.body.level,
+    projectAssigned: req.body.projectAssigned
   };
   try{
     const response = await mongodb
     .getDb()
-    .db('CSE341')
-    .collection('todos')
+    .db('workOrderProject')
+    .collection('employees')
     .insertOne(todo);
     if (response.acknowledged) {
       res.status(201).json(response);
@@ -55,24 +52,21 @@ const createToDo = async (req,res,next) => {
   }
 };
 
-const updateToDo = async (req,res,next) => {
+const updateE = async (req,res,next) => {
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const userId = new ObjectId(req.params.id);
-  const todo = {
-    todaysDate: req.body.todaysDate,
-    task: req.body.task,
-    dueDate: req.body.dueDate,
-    class: req.body.class,
-    appointment: req.body.appointment,
-    activities: req.body.activities,
-    notes: req.body.notes
+  const update = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    level: req.body.level,
+    projectAssigned: req.body.projectAssigned
     };
    try{
     const response = await mongodb
     .getDb()
-    .db('CSE341')
-    .collection('todos')
+    .db('workOrderProject')
+    .collection('employees')
     .replaceOne({ _id: userId }, todo);
     console.log(response);
     if (response.modifiedCount > 0) {
@@ -86,15 +80,15 @@ const updateToDo = async (req,res,next) => {
     }
 };
 
-const deleteToDo = async (req,res,next) => {
+const deleteE = async (req,res,next) => {
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const userId = new ObjectId(req.params.id);
   try{
     const response = await mongodb
     .getDb()
-    .db('CSE341')
-    .collection('todos')
+    .db('workOrderProject')
+    .collection('employees')
     .remove({ _id: userId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
@@ -110,4 +104,4 @@ const deleteToDo = async (req,res,next) => {
 
 
 
-module.exports = {getAll, getSingle, createToDo, updateToDo, deleteToDo};
+module.exports = {getAll, getSingle, employee, updateE, deleteE};
