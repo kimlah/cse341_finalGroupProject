@@ -9,9 +9,9 @@ router.get('/', adminController.getAll);
 
 router.get('/:id', adminController.getSingle);
 
-router.post('/', validator.validatedTask, adminController.createUser);
+router.post('/', validator.validatedAdmin, adminController.createUser);
 
-router.put('/:id', validator.validatedTask, adminController.updateUser);
+router.put('/:id', validator.validatedAdmin, adminController.updateUser);
 
 router.delete('/:id', adminController.deleteUser);
 
