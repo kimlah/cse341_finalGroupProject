@@ -28,15 +28,15 @@ const getSingle = async (req, res, next) => {
   });
 };
 
-const createToDo = async (req,res,next) => {
-  const todo = {
-    todaysDate: req.body.todaysDate,
-    task: req.body.task,
-    dueDate: req.body.dueDate,
-    class: req.body.class,
-    appointment: req.body.appointment,
-    activities: req.body.activities,
-    notes: req.body.notes
+const createUser = async (req,res,next) => {
+  const user = {
+    fistName: req.body.fistName,
+    LastName: req.body.LastName,
+    birthday: req.body.birthday,
+    department: req.body.department,
+    hireDate: req.body.hireDate,
+    level: req.body.level,
+    projectsAssigned: req.body.projectsAssigned
   };
   try{
     const response = await mongodb
@@ -55,19 +55,19 @@ const createToDo = async (req,res,next) => {
   }
 };
 
-const updateToDo = async (req,res,next) => {
+const updateUser = async (req,res,next) => {
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const userId = new ObjectId(req.params.id);
-  const todo = {
-    todaysDate: req.body.todaysDate,
-    task: req.body.task,
-    dueDate: req.body.dueDate,
-    class: req.body.class,
-    appointment: req.body.appointment,
-    activities: req.body.activities,
-    notes: req.body.notes
-    };
+  const user = {
+    fistName: req.body.fistName,
+    LastName: req.body.LastName,
+    birthday: req.body.birthday,
+    department: req.body.department,
+    hireDate: req.body.hireDate,
+    level: req.body.level,
+    projectsAssigned: req.body.projectsAssigned
+  };
    try{
     const response = await mongodb
     .getDb()
@@ -86,7 +86,7 @@ const updateToDo = async (req,res,next) => {
     }
 };
 
-const deleteToDo = async (req,res,next) => {
+const deleteUser = async (req,res,next) => {
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const userId = new ObjectId(req.params.id);
@@ -110,4 +110,4 @@ const deleteToDo = async (req,res,next) => {
 
 
 
-module.exports = {getAll, getSingle, createToDo, updateToDo, deleteToDo};
+module.exports = {getAll, getSingle, createUser, updateUser, deleteUser};
