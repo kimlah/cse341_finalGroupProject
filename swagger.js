@@ -1,11 +1,12 @@
+
 const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
     title: 'My API',
-    description: 'ToDos API',
+    description: 'Work Orders API',
   },
-  host: 'cse341-project2-k61i.onrender.com',
+  host: 'cse341-finalproject-yq22.onrender.com',
   schemes: ['https'],
 };
 
