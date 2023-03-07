@@ -3,17 +3,17 @@ const router = express.Router();
 
 const validator = require('../validate');
 
-const todosController = require('../controller/admin');
+const adminController = require('../controller/admin');
 
-router.get('/', todosController.getAll);
+router.get('/', adminController.getAll);
 
-router.get('/:id', todosController.getSingle);
+router.get('/:id', adminController.getSingle);
 
-router.post('/', validator.validatedTask, todosController.createToDo);
+router.post('/', validator.validatedTask, adminController.createUser);
 
-router.put('/:id', validator.validatedTask, todosController.updateToDo);
+router.put('/:id', validator.validatedTask, adminController.updateUser);
 
-router.delete('/:id', todosController.deleteToDo);
+router.delete('/:id', adminController.deleteUser);
 
 
 module.exports = router;
