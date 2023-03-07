@@ -67,3 +67,68 @@ content-type: application/json
 }
 ###DELETE CONTACT (DELETE)
 DELETE   https://cse341-project2-k61i.onrender.com/admin HTTP/1.1
+###
+###
+###LOCAL HOST EMPLOYEE REQUEST
+###
+GET http://localhost:8080/admin
+###CREAT CONTACT (POST)
+POST  http://localhost:8080/employee HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Keeley",
+    "lastName": "Imlah",
+    "birthday": "n/a",
+    "department": "IT",
+    "hireDate": "03/06/2023",
+    "level": "1",
+    "projectsAssigned": "final project"
+}
+###UPDATE CONTACT (PUT)
+PUT  http://localhost:8080/employee HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Keeley",
+    "lastName": "Imlah",
+    "birthday": "n/a",
+    "department": "IT",
+    "hireDate": "03/06/2023",
+    "level": "1",
+    "projectsAssigned": "final project"
+}
+###DELETE CONTACT (DELETE)
+DELETE   http://localhost:8080/employee HTTP/1.1
+content-type: application/json
+###
+###
+###EMPLOYEE RENDER REQUEST
+###
+GET https://cse341-finalproject-yq22.onrender.com/employee
+###
+###CREAT CONTACT (POST)
+POST  https://cse341-finalproject-yq22.onrender.com/employee HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Keeley",
+    "lastName": "Imlah",
+    "birthday": "na",
+    "department": "IT",
+    "hireDate": "03/06/2023",
+    "level": "1",
+    "projectsAssigned": "final project"
+}
+###UPDATE CONTACT (PUT)
+PUT  https://cse341-project2-k61i.onrender.com/employee HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Keeley",
+    "lastName": "Imlah",
+    "level": "1",
+    "projectsAssigned": "final project"
+}
+###DELETE CONTACT (DELETE)
+DELETE   https://cse341-project2-k61i.onrender.com/employee HTTP/1.1
