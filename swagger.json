@@ -41,16 +41,22 @@
               "type": "object",
               "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "firstName": {
                   "example": "any"
                 },
                 "lastName": {
 =======
+=======
+>>>>>>> 79b421f3f70d4939aa8004529d706fffc5ae8297
                 "fistName": {
                   "example": "any"
                 },
                 "LastName": {
+<<<<<<< HEAD
 >>>>>>> 79bdf0a (updated validator.js)
+=======
+>>>>>>> 79b421f3f70d4939aa8004529d706fffc5ae8297
                   "example": "any"
                 },
                 "birthday": {
@@ -124,16 +130,22 @@
               "type": "object",
               "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "firstName": {
                   "example": "any"
                 },
                 "lastName": {
 =======
+=======
+>>>>>>> 79b421f3f70d4939aa8004529d706fffc5ae8297
                 "fistName": {
                   "example": "any"
                 },
                 "LastName": {
+<<<<<<< HEAD
 >>>>>>> 79bdf0a (updated validator.js)
+=======
+>>>>>>> 79b421f3f70d4939aa8004529d706fffc5ae8297
                   "example": "any"
                 },
                 "birthday": {
@@ -359,6 +371,7 @@
               "type": "object",
               "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "todaysDate": {
                   "example": "any"
                 },
@@ -376,6 +389,8 @@
                 },
                 "activities": {
 =======
+=======
+>>>>>>> 79b421f3f70d4939aa8004529d706fffc5ae8297
                 "equipmentName": {
                   "example": "any"
                 },
@@ -392,7 +407,10 @@
                   "example": "any"
                 },
                 "location": {
+<<<<<<< HEAD
 >>>>>>> 79bdf0a (updated validator.js)
+=======
+>>>>>>> 79b421f3f70d4939aa8004529d706fffc5ae8297
                   "example": "any"
                 },
                 "notes": {
@@ -454,6 +472,7 @@
               "type": "object",
               "properties": {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "todaysDate": {
                   "example": "any"
                 },
@@ -471,6 +490,8 @@
                 },
                 "activities": {
 =======
+=======
+>>>>>>> 79b421f3f70d4939aa8004529d706fffc5ae8297
                 "equipmentName": {
                   "example": "any"
                 },
@@ -487,7 +508,10 @@
                   "example": "any"
                 },
                 "location": {
+<<<<<<< HEAD
 >>>>>>> 79bdf0a (updated validator.js)
+=======
+>>>>>>> 79b421f3f70d4939aa8004529d706fffc5ae8297
                   "example": "any"
                 },
                 "notes": {

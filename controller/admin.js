@@ -62,8 +62,11 @@ const updateUser = async (req,res,next) => {
   const user = {
     firstName: req.body.firstName,
 <<<<<<< HEAD
+<<<<<<< HEAD
     lastName: req.body.lastName,
 =======
+=======
+>>>>>>> 79b421f3f70d4939aa8004529d706fffc5ae8297
     LastName: req.body.LastName,
 >>>>>>> 79bdf0a (updated validator.js)
     birthday: req.body.birthday,
