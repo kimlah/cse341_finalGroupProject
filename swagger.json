@@ -122,6 +122,9 @@
                 "lastName": {
                   "example": "any"
                 },
+                "LastName": {
+                  "example": "any"
+                },
                 "birthday": {
                   "example": "any"
                 },
@@ -344,22 +347,22 @@
             "schema": {
               "type": "object",
               "properties": {
-                "todaysDate": {
+                "equipmentName": {
                   "example": "any"
                 },
-                "task": {
+                "datePurchased": {
                   "example": "any"
                 },
-                "dueDate": {
+                "maintenance": {
                   "example": "any"
                 },
-                "class": {
+                "available": {
                   "example": "any"
                 },
-                "appointment": {
+                "pastWorkOrders": {
                   "example": "any"
                 },
-                "activities": {
+                "location": {
                   "example": "any"
                 },
                 "notes": {
@@ -420,22 +423,22 @@
             "schema": {
               "type": "object",
               "properties": {
-                "todaysDate": {
+                "equipmentName": {
                   "example": "any"
                 },
-                "task": {
+                "datePurchased": {
                   "example": "any"
                 },
-                "dueDate": {
+                "maintenance": {
                   "example": "any"
                 },
-                "class": {
+                "available": {
                   "example": "any"
                 },
-                "appointment": {
+                "pastWorkOrders": {
                   "example": "any"
                 },
-                "activities": {
+                "location": {
                   "example": "any"
                 },
                 "notes": {
