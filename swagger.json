@@ -122,6 +122,9 @@
                 "lastName": {
                   "example": "any"
                 },
+                "LastName": {
+                  "example": "any"
+                },
                 "birthday": {
                   "example": "any"
                 },
