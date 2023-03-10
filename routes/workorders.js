@@ -3,17 +3,22 @@ const router = express.Router();
 
 const validator = require('../validate');
 
-const todosController = require('../controller/workorders');
+const workOrderController = require('../controller/workorders');
 
-router.get('/', todosController.getAll);
+// #swagger.tags = ['Work Orders']
+router.post('/', validator.validatedWorkOrder, workOrderController.createToDo);
 
-router.get('/:id', todosController.getSingle);
+// #swagger.tags = ['Work Orders']
+router.get('/', workOrderController.getAll);
 
-router.post('/', validator.validatedWorkOrder, todosController.createToDo);
+// #swagger.tags = ['Work Orders']
+router.get('/:id', workOrderController.getSingle);
 
-router.put('/:id', validator.validatedWorkOrder, todosController.updateToDo);
+// #swagger.tags = ['Work Orders']
+router.put('/:id', validator.validatedWorkOrder, workOrderController.updateToDo);
 
-router.delete('/:id', todosController.deleteToDo);
+// #swagger.tags = ['Work Orders']
+router.delete('/:id', workOrderController.deleteToDo);
 
 
 module.exports = router;
