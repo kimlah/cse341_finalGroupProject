@@ -2,6 +2,7 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
+  // #swagger.tags = ['Administrator']
   const result = await mongodb
   .getDb()
   .db('workOrderProject')
@@ -14,6 +15,7 @@ const getAll = async (req, res, next) => {
 };
 
 const getSingle = async (req, res, next) => {
+  // #swagger.tags = ['Administrator']
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const userId = new ObjectId(req.params.id);
@@ -29,6 +31,7 @@ const getSingle = async (req, res, next) => {
 };
 
 const createUser = async (req,res,next) => {
+  // #swagger.tags = ['Administrator']
   const user = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -56,6 +59,7 @@ const createUser = async (req,res,next) => {
 };
 
 const updateUser = async (req,res,next) => {
+  // #swagger.tags = ['Administrator']
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const userId = new ObjectId(req.params.id);
@@ -87,6 +91,7 @@ const updateUser = async (req,res,next) => {
 };
 
 const deleteUser = async (req,res,next) => {
+  // #swagger.tags = ['Administrator']
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const userId = new ObjectId(req.params.id);

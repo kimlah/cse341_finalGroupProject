@@ -2,6 +2,7 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
+  // #swagger.tags = ['Equipment']
   const result = await mongodb
   .getDb()
   .db('workOrderProject')
@@ -14,6 +15,7 @@ const getAll = async (req, res, next) => {
 };
 
 const getSingle = async (req, res, next) => {
+  // #swagger.tags = ['Equipment']
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const equipmentId = new ObjectId(req.params.id);
@@ -29,6 +31,7 @@ const getSingle = async (req, res, next) => {
 };
 
 const createEquipment = async (req,res,next) => {
+  // #swagger.tags = ['Equipment']
   const equipment = {
     equipmentName: req.body.equipmentName,
     datePurchased: req.body.datePurchased,
@@ -56,6 +59,7 @@ const createEquipment = async (req,res,next) => {
 };
 
 const updateEquipment = async (req,res,next) => {
+  // #swagger.tags = ['Equipment']
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const equipmentId = new ObjectId(req.params.id);
@@ -87,6 +91,7 @@ const updateEquipment = async (req,res,next) => {
 };
 
 const deleteEquipment = async (req,res,next) => {
+  // #swagger.tags = ['Equipment']
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const equipmentId = new ObjectId(req.params.id);
