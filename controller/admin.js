@@ -43,7 +43,7 @@ const createUser = async (req,res,next) => {
     .getDb()
     .db('workOrderProject')
     .collection('admins')
-    .insertOne(todo);
+    .insertOne(user);
     if (response.acknowledged) {
       res.status(201).json(response);
     }
@@ -62,7 +62,7 @@ const updateUser = async (req,res,next) => {
   const user = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-     birthday: req.body.birthday,
+    birthday: req.body.birthday,
     department: req.body.department,
     hireDate: req.body.hireDate,
     level: req.body.level,
@@ -73,7 +73,7 @@ const updateUser = async (req,res,next) => {
     .getDb()
     .db('workOrderProject')
     .collection('admins')
-    .replaceOne({ _id: userId }, todo);
+    .replaceOne({ _id: userId }, user);
     console.log(response);
     if (response.modifiedCount > 0) {
       res.status(204).send();

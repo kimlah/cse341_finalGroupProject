@@ -46,15 +46,7 @@ content-type: application/json
 {
     "firstName": "Keeley",
     "lastName": "Imlah",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "birthday": "na",
-=======
-    "birthday": "n/a",
->>>>>>> 79bdf0a (updated validator.js)
-=======
-    "birthday": "na",
->>>>>>> 79b421f3f70d4939aa8004529d706fffc5ae8297
     "department": "IT",
     "hireDate": "03/06/2023",
     "level": "1",
