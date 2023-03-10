@@ -40,7 +40,7 @@ const employee = async (req,res,next) => {
     .getDb()
     .db('workOrderProject')
     .collection('employees')
-    .insertOne(todo);
+    .insertOne(employee);
     if (response.acknowledged) {
       res.status(201).json(response);
     }
@@ -67,7 +67,7 @@ const updateE = async (req,res,next) => {
     .getDb()
     .db('workOrderProject')
     .collection('employees')
-    .replaceOne({ _id: userId }, todo);
+    .replaceOne({ _id: userId }, update);
     console.log(response);
     if (response.modifiedCount > 0) {
       res.status(204).send();
