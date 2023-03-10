@@ -31,13 +31,15 @@ const getSingle = async (req, res, next) => {
 const createToDo = async (req,res,next) => {
   const todo = {
     todaysDate: req.body.todaysDate,
-    task: req.body.task,
+    appointmentDate: req.body.appointmentDate,
     dueDate: req.body.dueDate,
-    class: req.body.class,
-    appointment: req.body.appointment,
-    activities: req.body.activities,
-    notes: req.body.notes
-  };
+    completeDate: req.body.completeDate,
+    location: req.body.location,
+    contacts: req.body.contacts,
+    tasks: req.body.tasks,
+    notes: req.body.notes,
+    orderPhotos: req.body.orderPhotos
+    };
   try{
     const response = await mongodb
     .getDb()
@@ -61,12 +63,14 @@ const updateToDo = async (req,res,next) => {
   const userId = new ObjectId(req.params.id);
   const todo = {
     todaysDate: req.body.todaysDate,
-    task: req.body.task,
+    appointmentDate: req.body.appointmentDate,
     dueDate: req.body.dueDate,
-    class: req.body.class,
-    appointment: req.body.appointment,
-    activities: req.body.activities,
-    notes: req.body.notes
+    completeDate: req.body.completeDate,
+    location: req.body.location,
+    contacts: req.body.contacts,
+    tasks: req.body.tasks,
+    notes: req.body.notes,
+    orderPhotos: req.body.orderPhotos
     };
    try{
     const response = await mongodb

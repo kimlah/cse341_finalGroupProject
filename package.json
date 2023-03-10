@@ -4,8 +4,7 @@
   "description": "CSE341-Final Project",
   "main": "server.js",
   "scripts": {
-
-    "start": "nodemon ./server.js" ,
+    "start": "nodemon ./server.js",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
@@ -39,6 +38,7 @@
     "express-validator": "^6.14.3",
     "mongoose": "^6.9.0",
     "node-oauth2-server": "^2.4.0",
+    "nodemon": "^2.0.21",
     "oauth": "^0.10.0",
     "pg": "^8.9.0",
     "swagger-ui-express": "^4.6.0",

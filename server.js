@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 const dotenv = require('dotenv');
 dotenv.config();
-const { auth, requiresAuth } = require('express-openid-connect');
+//const { auth, requiresAuth } = require('express-openid-connect');
 
 const port = process.env.PORT || 8080;
 
@@ -19,7 +19,7 @@ const config = {
 const app = express();
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
-app.use(auth(config));
+//app.use(auth(config));
 
 app
   .use(bodyParser.json())
@@ -37,10 +37,10 @@ mongodb.initDb((err) => {
   }
 });
 
-app.get('/', (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-});
+// app.get('/', (req, res) => {
+//   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+// });
 
-app.get('/profile', requiresAuth(), (req, res) => {
-  res.send(JSON.stringify(req.oidc.user));
-});
+// app.get('/profile', requiresAuth(), (req, res) => {
+//   res.send(JSON.stringify(req.oidc.user));
+// });
