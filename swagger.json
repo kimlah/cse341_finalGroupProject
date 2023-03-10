@@ -21,6 +21,8 @@
     "/admin/": {
       "post": {
         "description": "",
+        "tags":
+          "Admin",
         "parameters": [
           {
             "name": "body",
@@ -67,6 +69,8 @@
       },
       "get": {
         "description": "",
+        "tags":
+          "Admin",
         "produces": [
           "application/json"
         ],
@@ -81,6 +85,8 @@
     "/admin/{id}": {
       "get": {
         "description": "",
+        "tags":
+          "Admin",
         "produces": [
           "application/json"
         ],
@@ -103,6 +109,8 @@
       },
       "put": {
         "description": "",
+        "tags":
+          "Admin",
         "parameters": [
           {
             "name": "id",
@@ -161,6 +169,8 @@
       },
       "delete": {
         "description": "",
+        "tags":
+          "Admin",
         "parameters": [
           {
             "name": "id",
@@ -185,6 +195,8 @@
     "/employee/": {
       "post": {
         "description": "",
+        "tags":
+          "Employee",
         "parameters": [
           {
             "name": "body",
@@ -222,6 +234,8 @@
       },
       "get": {
         "description": "",
+        "tags":
+          "Employee",
         "produces": [
           "application/json"
         ],
@@ -236,6 +250,8 @@
     "/employee/{id}": {
       "get": {
         "description": "",
+        "tags":
+          "Employee",
         "produces": [
           "application/json"
         ],
@@ -258,6 +274,8 @@
       },
       "put": {
         "description": "",
+        "tags":
+          "Employee",
         "parameters": [
           {
             "name": "id",
@@ -304,6 +322,8 @@
       },
       "delete": {
         "description": "",
+        "tags":
+          "Employee",
         "parameters": [
           {
             "name": "id",
@@ -328,6 +348,8 @@
     "/equipment/": {
       "post": {
         "description": "",
+        "tags":
+          "Equipment",
         "parameters": [
           {
             "name": "body",
@@ -374,6 +396,8 @@
       },
       "get": {
         "description": "",
+        "tags":
+          "Equipment",
         "produces": [
           "application/json"
         ],
@@ -388,6 +412,8 @@
     "/equipment/{id}": {
       "get": {
         "description": "",
+        "tags":
+          "Equipment",
         "produces": [
           "application/json"
         ],
@@ -410,6 +436,8 @@
       },
       "put": {
         "description": "",
+        "tags":
+          "Equipment",
         "parameters": [
           {
             "name": "id",
@@ -465,6 +493,8 @@
       },
       "delete": {
         "description": "",
+        "tags":
+          "Equipment",
         "parameters": [
           {
             "name": "id",
@@ -489,6 +519,8 @@
     "/workorder/": {
       "post": {
         "description": "",
+        "tags":
+          "Work Order",
         "parameters": [
           {
             "name": "body",
@@ -535,6 +567,8 @@
       },
       "get": {
         "description": "",
+        "tags":
+          "Work Order",
         "produces": [
           "application/json"
         ],
@@ -549,6 +583,8 @@
     "/workorder/{id}": {
       "get": {
         "description": "",
+        "tags":
+          "Work Order",
         "produces": [
           "application/json"
         ],
@@ -571,6 +607,8 @@
       },
       "put": {
         "description": "",
+        "tags":
+          "Work Order",
         "parameters": [
           {
             "name": "id",
@@ -626,6 +664,8 @@
       },
       "delete": {
         "description": "",
+        "tags":
+          "Work Order",
         "parameters": [
           {
             "name": "id",
