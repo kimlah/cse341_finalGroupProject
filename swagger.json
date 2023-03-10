@@ -122,9 +122,6 @@
                 "lastName": {
                   "example": "any"
                 },
-                "LastName": {
-                  "example": "any"
-                },
                 "birthday": {
                   "example": "any"
                 },
@@ -499,22 +496,28 @@
                 "todaysDate": {
                   "example": "any"
                 },
-                "task": {
+                "appointmentDate": {
                   "example": "any"
                 },
                 "dueDate": {
                   "example": "any"
                 },
-                "class": {
+                "completeDate": {
                   "example": "any"
                 },
-                "appointment": {
+                "location": {
                   "example": "any"
                 },
-                "activities": {
+                "contacts": {
+                  "example": "any"
+                },
+                "tasks": {
                   "example": "any"
                 },
                 "notes": {
+                  "example": "any"
+                },
+                "orderPhotos": {
                   "example": "any"
                 }
               }
@@ -587,22 +590,28 @@
                 "todaysDate": {
                   "example": "any"
                 },
-                "task": {
+                "appointmentDate": {
                   "example": "any"
                 },
                 "dueDate": {
                   "example": "any"
                 },
-                "class": {
+                "completeDate": {
                   "example": "any"
                 },
-                "appointment": {
+                "location": {
                   "example": "any"
                 },
-                "activities": {
+                "contacts": {
+                  "example": "any"
+                },
+                "tasks": {
                   "example": "any"
                 },
                 "notes": {
+                  "example": "any"
+                },
+                "orderPhotos": {
                   "example": "any"
                 }
               }
