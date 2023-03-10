@@ -46,15 +46,7 @@ content-type: application/json
 {
     "firstName": "Keeley",
     "lastName": "Imlah",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "birthday": "na",
-=======
-    "birthday": "n/a",
->>>>>>> 79bdf0a (updated validator.js)
-=======
-    "birthday": "na",
->>>>>>> 79b421f3f70d4939aa8004529d706fffc5ae8297
     "department": "IT",
     "hireDate": "03/06/2023",
     "level": "1",
@@ -139,3 +131,57 @@ DELETE   https://cse341-project2-k61i.onrender.com/admin HTTP/1.1
 =======
 DELETE   https://cse341-project2-k61i.onrender.com/admin HTTP/1.1
 >>>>>>> 79b421f3f70d4939aa8004529d706fffc5ae8297
+
+
+####################################################################
+### EQUIPMENT ###
+####################################################################
+
+// POST route for new equipment
+POST https://cse341-project2-k61i.onrender.com/equipment HTTP/1.1
+content-type: application/json
+
+{
+    "equipmentName": "Edger",
+    "datePurchased": "10/06/2018",
+    "maintenance": [
+        "08/17/2020-replaced belt"
+    ],
+    "available": "false",
+    "pastWorkOrders": [
+        "348978",
+        "111234"
+    ],
+    "location": "bay 7",
+    "notes": ""
+}
+
+// GET all equipment
+GET https://cse341-project2-k61i.onrender.com/equipment
+
+// GET equipment by id
+GET https://cse341-project2-k61i.onrender.com/equipment/64095c3ea4df4c99561e20c6
+
+// PUT for updating equipment based on id
+PUT https://cse341-project2-k61i.onrender.com/equipment/64095c3ea4df4c99561e20c8 HTTP/1.1
+content-type: application/json
+
+{
+    "equipmentName": "Circular Saw",
+    "datePurchased": "10/15/2020",
+    "maintenance": [
+        "07/01/2021-new blade",
+        "07/01/2021-lubricate",
+        "10/07/2022-new blade"
+    ],
+    "available": "false",
+    "pastWorkOrders": [
+        "456789",
+        "012356"
+    ],
+    "location": "1234 job location, City ",
+    "notes": "Current job duration: 2.5 weeks"
+}
+
+// DELETE by equipment ID
+DELETE https://cse341-project2-k61i.onrender.com/equipment HTTP/1.1
