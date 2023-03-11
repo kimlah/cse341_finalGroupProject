@@ -34,9 +34,9 @@ content-type: application/json
 
 
 
-
+############################################################
 ###ADMIN RENDER REQUEST
-###
+############################################################
 GET https://cse341-finalproject-yq22.onrender.com/admin
 ###
 ###CREAT CONTACT (POST)
@@ -53,26 +53,26 @@ content-type: application/json
     "projectsAssigned": "final project"
 }
 ###UPDATE CONTACT (PUT)
-PUT  https://cse341-project2-k61i.onrender.com/admin HTTP/1.1
+PUT  https://cse341-project2-k61i.onrender.com/admin/640be498a00a16b9a0a5c329 HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Keeley",
-    "lastName": "Imlah",
-    "birthday": "hmmm",
-    "department": "IT",
-    "hireDate": "03/06/2023",
+    "firstName": "Anthony",
+    "lastName": "Crew",
+    "birthday": "08/08/1988",
+    "department": "Estimating",
+    "hireDate": "02/10/2010",
     "level": "1",
-    "projectsAssigned": "final project"
+    "projectsAssigned": "any"
 }
 ###DELETE CONTACT (DELETE)
-<<<<<<< HEAD
-<<<<<<< HEAD
-DELETE   https://cse341-project2-k61i.onrender.com/admin HTTP/1.1
+DELETE   https://cse341-project2-k61i.onrender.com/admin/640aa44ec497d0d4bc1588e7 HTTP/1.1
 ###
-###
+
+###############################################
 ###LOCAL HOST EMPLOYEE REQUEST
-###
+###############################################
+
 GET http://localhost:8080/admin
 ###CREAT CONTACT (POST)
 POST  http://localhost:8080/employee HTTP/1.1
@@ -98,9 +98,11 @@ content-type: application/json
 DELETE   http://localhost:8080/employee HTTP/1.1
 content-type: application/json
 ###
-###
+
+####################################################################
 ###EMPLOYEE RENDER REQUEST
-###
+####################################################################
+
 GET https://cse341-finalproject-yq22.onrender.com/employee
 ###
 ###CREAT CONTACT (POST)
@@ -108,29 +110,23 @@ POST  https://cse341-finalproject-yq22.onrender.com/employee HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Kira",
-    "lastName": "Santos",
+    "firstName": "Terri",
+    "lastName": "Lo",
     "level": "2",
     "projectsAssigned": "final project"
 }
 ###UPDATE CONTACT (PUT)
-PUT  https://cse341-project2-k61i.onrender.com/employee HTTP/1.1
+PUT  https://cse341-project2-k61i.onrender.com/employee/640be582a00a16b9a0a5c32d HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Keeley",
-    "lastName": "Imlah",
-    "level": "1",
+    "firstName": "Theo",
+    "lastName": "Craven",
+    "level": "2",
     "projectsAssigned": "final project"
 }
 ###DELETE CONTACT (DELETE)
-DELETE   https://cse341-project2-k61i.onrender.com/employee HTTP/1.1
-=======
-DELETE   https://cse341-project2-k61i.onrender.com/admin HTTP/1.1
->>>>>>> 79bdf0a (updated validator.js)
-=======
-DELETE   https://cse341-project2-k61i.onrender.com/admin HTTP/1.1
->>>>>>> 79b421f3f70d4939aa8004529d706fffc5ae8297
+DELETE   https://cse341-project2-k61i.onrender.com/employee/640aa480c497d0d4bc1588e8 HTTP/1.1
 
 
 ####################################################################
