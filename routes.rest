@@ -1,44 +1,10 @@
-###LOCALHOST ADMIN REQUEST
-###
-GET http://localhost:8080/admin
-###CREAT CONTACT (POST)
-POST  http://localhost:8080/admin HTTP/1.1
-content-type: application/json
-
-{
-    "firstName": "Keeley",
-    "lastName": "Imlah",
-    "birthday": "n/a",
-    "department": "IT",
-    "hireDate": "03/06/2023",
-    "level": "1",
-    "projectsAssigned": "final project"
-}
-###UPDATE CONTACT (PUT)
-PUT  http://localhost:8080/ HTTP/1.1
-content-type: application/json
-
-{
-    "firstName": "Keeley",
-    "lastName": "Imlah",
-    "birthday": "n/a",
-    "department": "IT",
-    "hireDate": "03/06/2023",
-    "level": "1",
-    "projectsAssigned": "final project"
-}
-###DELETE CONTACT (DELETE)
-DELETE   http://localhost:8080/ HTTP/1.1
-content-type: application/json
-###
-
-
 
 ############################################################
 ###ADMIN RENDER REQUEST
 ############################################################
+## GET REQUEST
 GET https://cse341-finalproject-yq22.onrender.com/admin
-###
+
 ###CREAT CONTACT (POST)
 POST  https://cse341-finalproject-yq22.onrender.com/admin HTTP/1.1
 content-type: application/json
@@ -52,6 +18,7 @@ content-type: application/json
     "level": "1",
     "projectsAssigned": "final project"
 }
+
 ###UPDATE CONTACT (PUT)
 PUT  https://cse341-project2-k61i.onrender.com/admin/640be498a00a16b9a0a5c329 HTTP/1.1
 content-type: application/json
@@ -65,46 +32,18 @@ content-type: application/json
     "level": "1",
     "projectsAssigned": "any"
 }
+
 ###DELETE CONTACT (DELETE)
 DELETE   https://cse341-project2-k61i.onrender.com/admin/640aa44ec497d0d4bc1588e7 HTTP/1.1
-###
 
-###############################################
-###LOCAL HOST EMPLOYEE REQUEST
-###############################################
-
-GET http://localhost:8080/admin
-###CREAT CONTACT (POST)
-POST  http://localhost:8080/employee HTTP/1.1
-content-type: application/json
-
-{
-    "firstName": "Kira",
-    "lastName": "Santos",
-    "level": "2",
-    "projectsAssigned": "final project"
-}
-###UPDATE CONTACT (PUT)
-PUT  http://localhost:8080/employee HTTP/1.1
-content-type: application/json
-
-{
-    "firstName": "Kira",
-    "lastName": "Santos",
-    "level": "2",
-    "projectsAssigned": "final project"
-}
-###DELETE CONTACT (DELETE)
-DELETE   http://localhost:8080/employee HTTP/1.1
-content-type: application/json
-###
 
 ####################################################################
 ###EMPLOYEE RENDER REQUEST
 ####################################################################
+##GET REQUEST
 
 GET https://cse341-finalproject-yq22.onrender.com/employee
-###
+
 ###CREAT CONTACT (POST)
 POST  https://cse341-finalproject-yq22.onrender.com/employee HTTP/1.1
 content-type: application/json
@@ -115,7 +54,8 @@ content-type: application/json
     "level": "2",
     "projectsAssigned": "final project"
 }
-###UPDATE CONTACT (PUT)
+
+##UPDATE CONTACT (PUT)
 PUT  https://cse341-project2-k61i.onrender.com/employee/640be582a00a16b9a0a5c32d HTTP/1.1
 content-type: application/json
 
@@ -125,6 +65,7 @@ content-type: application/json
     "level": "2",
     "projectsAssigned": "final project"
 }
+
 ###DELETE CONTACT (DELETE)
 DELETE   https://cse341-project2-k61i.onrender.com/employee/640aa480c497d0d4bc1588e8 HTTP/1.1
 
