@@ -53,7 +53,7 @@ const createUser = async (req,res,next) => {
   }catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while creating the todo.')
+      message: (response.error || 'Some error occurred while creating the user.')
       })
   }
 };
@@ -85,7 +85,7 @@ const updateUser = async (req,res,next) => {
    } catch (error){
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while updating the todo.')
+      message: (response.error || 'Some error occurred while updating the user.')
       })
     }
 };
@@ -108,7 +108,7 @@ const deleteUser = async (req,res,next) => {
   }catch (error){
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while deleting the contact.')
+      message: (response.error || 'Some error occurred while deleting the user.')
       })
     }
 };

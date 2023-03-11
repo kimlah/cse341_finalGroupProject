@@ -34,7 +34,7 @@ content-type: application/json
 }
 
 ###DELETE CONTACT (DELETE)
-DELETE   https://cse341-project2-k61i.onrender.com/admin/640aa44ec497d0d4bc1588e7 HTTP/1.1
+DELETE   https://cse341-project2-k61i.onrender.com/admin/640bfbf2ff046fb7aa02a475 HTTP/1.1
 
 
 ####################################################################
@@ -55,7 +55,7 @@ content-type: application/json
     "projectsAssigned": "final project"
 }
 
-##UPDATE CONTACT (PUT)
+###UPDATE CONTACT (PUT)
 PUT  https://cse341-project2-k61i.onrender.com/employee/640be582a00a16b9a0a5c32d HTTP/1.1
 content-type: application/json
 
