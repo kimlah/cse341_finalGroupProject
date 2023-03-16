@@ -5,7 +5,7 @@
 ## GET REQUEST
 GET https://cse341-finalproject-yq22.onrender.com/admin
 
-###CREAT CONTACT (POST)
+### CREATE CONTACT (POST)
 POST  https://cse341-finalproject-yq22.onrender.com/admin HTTP/1.1
 content-type: application/json
 
@@ -19,7 +19,7 @@ content-type: application/json
     "projectsAssigned": "final project"
 }
 
-###UPDATE CONTACT (PUT)
+### UPDATE CONTACT (PUT)
 PUT  https://cse341-project2-k61i.onrender.com/admin/640be498a00a16b9a0a5c329 HTTP/1.1
 content-type: application/json
 
@@ -33,7 +33,7 @@ content-type: application/json
     "projectsAssigned": "any"
 }
 
-###DELETE CONTACT (DELETE)
+### DELETE CONTACT (DELETE)
 DELETE   https://cse341-project2-k61i.onrender.com/admin/640bfbf2ff046fb7aa02a475 HTTP/1.1
 
 
@@ -74,7 +74,7 @@ DELETE   https://cse341-project2-k61i.onrender.com/employee/640aa480c497d0d4bc15
 ### EQUIPMENT ###
 ####################################################################
 
-// POST route for new equipment
+### POST route for new equipment
 POST https://cse341-project2-k61i.onrender.com/equipment HTTP/1.1
 content-type: application/json
 
@@ -93,13 +93,13 @@ content-type: application/json
     "notes": ""
 }
 
-// GET all equipment
+### GET all equipment
 GET https://cse341-project2-k61i.onrender.com/equipment
 
-// GET equipment by id
+### GET equipment by id
 GET https://cse341-project2-k61i.onrender.com/equipment/64095c3ea4df4c99561e20c6
 
-// PUT for updating equipment based on id
+### PUT for updating equipment based on id
 PUT https://cse341-project2-k61i.onrender.com/equipment/64095c3ea4df4c99561e20c8 HTTP/1.1
 content-type: application/json
 
@@ -120,5 +120,5 @@ content-type: application/json
     "notes": "Current job duration: 2.5 weeks"
 }
 
-// DELETE by equipment ID
+### DELETE by equipment ID
 DELETE https://cse341-project2-k61i.onrender.com/equipment HTTP/1.1
