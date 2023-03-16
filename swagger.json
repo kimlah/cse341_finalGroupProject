@@ -24,6 +24,8 @@
           "Administrator"
         ],
         "description": "",
+        "tags":
+          "Admin",
         "parameters": [
           {
             "name": "body",
@@ -73,6 +75,8 @@
           "Administrator"
         ],
         "description": "",
+        "tags":
+          "Admin",
         "produces": [
           "application/json"
         ],
@@ -90,6 +94,8 @@
           "Administrator"
         ],
         "description": "",
+        "tags":
+          "Admin",
         "produces": [
           "application/json"
         ],
@@ -115,6 +121,8 @@
           "Administrator"
         ],
         "description": "",
+        "tags":
+          "Admin",
         "parameters": [
           {
             "name": "id",
@@ -173,6 +181,8 @@
           "Administrator"
         ],
         "description": "",
+        "tags":
+          "Admin",
         "parameters": [
           {
             "name": "id",
@@ -200,6 +210,8 @@
           "Employee"
         ],
         "description": "",
+        "tags":
+          "Employee",
         "parameters": [
           {
             "name": "body",
@@ -240,6 +252,8 @@
           "Employee"
         ],
         "description": "",
+        "tags":
+          "Employee",
         "produces": [
           "application/json"
         ],
@@ -257,6 +271,8 @@
           "Employee"
         ],
         "description": "",
+        "tags":
+          "Employee",
         "produces": [
           "application/json"
         ],
@@ -282,6 +298,8 @@
           "Employee"
         ],
         "description": "",
+        "tags":
+          "Employee",
         "parameters": [
           {
             "name": "id",
@@ -331,6 +349,8 @@
           "Employee"
         ],
         "description": "",
+        "tags":
+          "Employee",
         "parameters": [
           {
             "name": "id",
@@ -358,6 +378,8 @@
           "Equipment"
         ],
         "description": "",
+        "tags":
+          "Equipment",
         "parameters": [
           {
             "name": "body",
@@ -407,6 +429,8 @@
           "Equipment"
         ],
         "description": "",
+        "tags":
+          "Equipment",
         "produces": [
           "application/json"
         ],
@@ -424,6 +448,8 @@
           "Equipment"
         ],
         "description": "",
+        "tags":
+          "Equipment",
         "produces": [
           "application/json"
         ],
@@ -449,6 +475,8 @@
           "Equipment"
         ],
         "description": "",
+        "tags":
+          "Equipment",
         "parameters": [
           {
             "name": "id",
@@ -507,6 +535,8 @@
           "Equipment"
         ],
         "description": "",
+        "tags":
+          "Equipment",
         "parameters": [
           {
             "name": "id",
@@ -534,6 +564,8 @@
           "Work Orders"
         ],
         "description": "",
+        "tags":
+          "Work Order",
         "parameters": [
           {
             "name": "body",
@@ -589,6 +621,8 @@
           "Work Orders"
         ],
         "description": "",
+        "tags":
+          "Work Order",
         "produces": [
           "application/json"
         ],
@@ -606,6 +640,8 @@
           "Work Orders"
         ],
         "description": "",
+        "tags":
+          "Work Order",
         "produces": [
           "application/json"
         ],
@@ -631,6 +667,8 @@
           "Work Orders"
         ],
         "description": "",
+        "tags":
+          "Work Order",
         "parameters": [
           {
             "name": "id",
@@ -695,6 +733,8 @@
           "Work Orders"
         ],
         "description": "",
+        "tags":
+          "Work Order",
         "parameters": [
           {
             "name": "id",

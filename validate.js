@@ -48,10 +48,13 @@ const validatedEmployee = async (req, res, next) => {
 
 const validatedEquipment = async (req, res, next) => {
     const validationRule = {
-        "firstName": "string",
-        "lastName": "string",
-        "level": "required|string",
-        "projectsAssigned": "string"
+        "equipmentName": "required|string",
+        "datePurchased": "string",
+        "maintenance": "string",
+        "available": "required|string",
+        "pastWorkOrders": "string",
+        "location": "required|string",
+        "notes": "string"
     };
 
     await validator(req.body, validationRule, {}, (err, status) => {
