@@ -20,6 +20,9 @@
     },
     "/admin/": {
       "post": {
+        "tags": [
+          "Administrator"
+        ],
         "description": "",
         "tags":
           "Admin",
@@ -68,6 +71,9 @@
         }
       },
       "get": {
+        "tags": [
+          "Administrator"
+        ],
         "description": "",
         "tags":
           "Admin",
@@ -84,6 +90,9 @@
     },
     "/admin/{id}": {
       "get": {
+        "tags": [
+          "Administrator"
+        ],
         "description": "",
         "tags":
           "Admin",
@@ -108,6 +117,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Administrator"
+        ],
         "description": "",
         "tags":
           "Admin",
@@ -128,9 +140,6 @@
                   "example": "any"
                 },
                 "lastName": {
-                  "example": "any"
-                },
-                "LastName": {
                   "example": "any"
                 },
                 "birthday": {
@@ -168,6 +177,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Administrator"
+        ],
         "description": "",
         "tags":
           "Admin",
@@ -194,6 +206,9 @@
     },
     "/employee/": {
       "post": {
+        "tags": [
+          "Employee"
+        ],
         "description": "",
         "tags":
           "Employee",
@@ -233,6 +248,9 @@
         }
       },
       "get": {
+        "tags": [
+          "Employee"
+        ],
         "description": "",
         "tags":
           "Employee",
@@ -249,6 +267,9 @@
     },
     "/employee/{id}": {
       "get": {
+        "tags": [
+          "Employee"
+        ],
         "description": "",
         "tags":
           "Employee",
@@ -273,6 +294,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Employee"
+        ],
         "description": "",
         "tags":
           "Employee",
@@ -321,6 +345,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Employee"
+        ],
         "description": "",
         "tags":
           "Employee",
@@ -347,6 +374,9 @@
     },
     "/equipment/": {
       "post": {
+        "tags": [
+          "Equipment"
+        ],
         "description": "",
         "tags":
           "Equipment",
@@ -395,6 +425,9 @@
         }
       },
       "get": {
+        "tags": [
+          "Equipment"
+        ],
         "description": "",
         "tags":
           "Equipment",
@@ -411,6 +444,9 @@
     },
     "/equipment/{id}": {
       "get": {
+        "tags": [
+          "Equipment"
+        ],
         "description": "",
         "tags":
           "Equipment",
@@ -435,6 +471,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Equipment"
+        ],
         "description": "",
         "tags":
           "Equipment",
@@ -492,6 +531,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Equipment"
+        ],
         "description": "",
         "tags":
           "Equipment",
@@ -518,6 +560,9 @@
     },
     "/workorder/": {
       "post": {
+        "tags": [
+          "Work Orders"
+        ],
         "description": "",
         "tags":
           "Work Order",
@@ -531,22 +576,28 @@
                 "todaysDate": {
                   "example": "any"
                 },
-                "task": {
+                "appointmentDate": {
                   "example": "any"
                 },
                 "dueDate": {
                   "example": "any"
                 },
-                "class": {
+                "completeDate": {
                   "example": "any"
                 },
-                "appointment": {
+                "location": {
                   "example": "any"
                 },
-                "activities": {
+                "contacts": {
+                  "example": "any"
+                },
+                "tasks": {
                   "example": "any"
                 },
                 "notes": {
+                  "example": "any"
+                },
+                "orderPhotos": {
                   "example": "any"
                 }
               }
@@ -566,6 +617,9 @@
         }
       },
       "get": {
+        "tags": [
+          "Work Orders"
+        ],
         "description": "",
         "tags":
           "Work Order",
@@ -582,6 +636,9 @@
     },
     "/workorder/{id}": {
       "get": {
+        "tags": [
+          "Work Orders"
+        ],
         "description": "",
         "tags":
           "Work Order",
@@ -606,6 +663,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Work Orders"
+        ],
         "description": "",
         "tags":
           "Work Order",
@@ -625,22 +685,28 @@
                 "todaysDate": {
                   "example": "any"
                 },
-                "task": {
+                "appointmentDate": {
                   "example": "any"
                 },
                 "dueDate": {
                   "example": "any"
                 },
-                "class": {
+                "completeDate": {
                   "example": "any"
                 },
-                "appointment": {
+                "location": {
                   "example": "any"
                 },
-                "activities": {
+                "contacts": {
+                  "example": "any"
+                },
+                "tasks": {
                   "example": "any"
                 },
                 "notes": {
+                  "example": "any"
+                },
+                "orderPhotos": {
                   "example": "any"
                 }
               }
@@ -663,6 +729,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Work Orders"
+        ],
         "description": "",
         "tags":
           "Work Order",

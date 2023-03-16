@@ -2,6 +2,7 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
+  // #swagger.tags = ['Administrator']
   const result = await mongodb
   .getDb()
   .db('workOrderProject')
@@ -14,6 +15,7 @@ const getAll = async (req, res, next) => {
 };
 
 const getSingle = async (req, res, next) => {
+  // #swagger.tags = ['Administrator']
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const userId = new ObjectId(req.params.id);
@@ -29,6 +31,7 @@ const getSingle = async (req, res, next) => {
 };
 
 const createUser = async (req,res,next) => {
+  // #swagger.tags = ['Administrator']
   const user = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -43,32 +46,26 @@ const createUser = async (req,res,next) => {
     .getDb()
     .db('workOrderProject')
     .collection('admins')
-    .insertOne(todo);
+    .insertOne(user);
     if (response.acknowledged) {
       res.status(201).json(response);
     }
   }catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while creating the todo.')
+      message: (response.error || 'Some error occurred while creating the user.')
       })
   }
 };
 
 const updateUser = async (req,res,next) => {
+  // #swagger.tags = ['Administrator']
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const userId = new ObjectId(req.params.id);
   const user = {
     firstName: req.body.firstName,
-<<<<<<< HEAD
-<<<<<<< HEAD
     lastName: req.body.lastName,
-=======
-=======
->>>>>>> 79b421f3f70d4939aa8004529d706fffc5ae8297
-    LastName: req.body.LastName,
->>>>>>> 79bdf0a (updated validator.js)
     birthday: req.body.birthday,
     department: req.body.department,
     hireDate: req.body.hireDate,
@@ -80,7 +77,7 @@ const updateUser = async (req,res,next) => {
     .getDb()
     .db('workOrderProject')
     .collection('admins')
-    .replaceOne({ _id: userId }, todo);
+    .replaceOne({ _id: userId }, user);
     console.log(response);
     if (response.modifiedCount > 0) {
       res.status(204).send();
@@ -88,12 +85,13 @@ const updateUser = async (req,res,next) => {
    } catch (error){
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while updating the todo.')
+      message: (response.error || 'Some error occurred while updating the user.')
       })
     }
 };
 
 const deleteUser = async (req,res,next) => {
+  // #swagger.tags = ['Administrator']
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const userId = new ObjectId(req.params.id);
@@ -110,7 +108,7 @@ const deleteUser = async (req,res,next) => {
   }catch (error){
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while deleting the contact.')
+      message: (response.error || 'Some error occurred while deleting the user.')
       })
     }
 };

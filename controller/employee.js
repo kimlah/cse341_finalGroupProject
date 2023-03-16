@@ -2,6 +2,7 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
+  // #swagger.tags = ['Employee']
   const result = await mongodb
   .getDb()
   .db('workOrderProject')
@@ -14,6 +15,7 @@ const getAll = async (req, res, next) => {
 };
 
 const getSingle = async (req, res, next) => {
+  // #swagger.tags = ['Employee']
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const userId = new ObjectId(req.params.id);
@@ -29,6 +31,7 @@ const getSingle = async (req, res, next) => {
 };
 
 const employee = async (req,res,next) => {
+  // #swagger.tags = ['Employee']
   const employee = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -40,19 +43,20 @@ const employee = async (req,res,next) => {
     .getDb()
     .db('workOrderProject')
     .collection('employees')
-    .insertOne(todo);
+    .insertOne(employee);
     if (response.acknowledged) {
       res.status(201).json(response);
     }
   }catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while creating the todo.')
+      message: (response.error || 'Some error occurred while creating the employee.')
       })
   }
 };
 
 const updateE = async (req,res,next) => {
+  // #swagger.tags = ['Employee']
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const userId = new ObjectId(req.params.id);
@@ -67,7 +71,7 @@ const updateE = async (req,res,next) => {
     .getDb()
     .db('workOrderProject')
     .collection('employees')
-    .replaceOne({ _id: userId }, todo);
+    .replaceOne({ _id: userId }, update);
     console.log(response);
     if (response.modifiedCount > 0) {
       res.status(204).send();
@@ -75,12 +79,13 @@ const updateE = async (req,res,next) => {
    } catch (error){
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while updating the todo.')
+      message: (response.error || 'Some error occurred while updating the employee.')
       })
     }
 };
 
 const deleteE = async (req,res,next) => {
+  // #swagger.tags = ['Employee']
   if (ObjectId.isValid(req.id)) 
   {return res.status(400).send("Invalid object id");}
   const userId = new ObjectId(req.params.id);
@@ -97,7 +102,7 @@ const deleteE = async (req,res,next) => {
   }catch (error){
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while deleting the contact.')
+      message: (response.error || 'Some error occurred while deleting the employee.')
       })
     }
 };
