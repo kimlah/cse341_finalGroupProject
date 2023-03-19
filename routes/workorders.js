@@ -6,15 +6,15 @@ const validator = require('../validate');
 const workOrderController = require('../controller/workorders');
 
 
-router.post('/', validator.validatedWorkOrder, workOrderController.createToDo);
+router.post('/', validator.validatedWorkOrder, workOrderController.createWorkOrder);
 
 router.get('/', workOrderController.getAll);
 
 router.get('/:id', workOrderController.getSingle);
 
-router.put('/:id', validator.validatedWorkOrder, workOrderController.updateToDo);
+router.put('/:id', validator.validatedWorkOrder, workOrderController.updateWorkOrder);
 
-router.delete('/:id', workOrderController.deleteToDo);
+router.delete('/:id', workOrderController.deleteWorkOrder);
 
 
 module.exports = router;

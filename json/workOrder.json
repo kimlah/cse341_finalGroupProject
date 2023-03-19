@@ -10,41 +10,41 @@
             "State": "Ohio",
             "zipCode": 45501
         },
-        "contacts":{
-            "contact1":{
+        "contacts":[
+            {
                 "name": "Bob Howdy",
                 "phoneNumber": "986-555-3221",
                 "email": "movinit@test.com"
             }
-        },
-        "tasks": {
-            "task1":{
+        ],
+        "tasks": [
+            {
                 "instructions":"Dig a trench 1' wide x 20' long x 2' deep",
                 "equipment": "spade shovel"
             },
-            "task2":{
+            {
                 "instructions":"Place pipe conduit in trench",
                 "equipment": ""
             },
-            "task3":{
+            {
                 "instructions":"Connect conduit to exist network",
                 "equipment": "cable spicer"
             },
-            "task4":{
+            {
                 "instructions":"cover conduit with exarted solil",
                 "equipment": "cable spicer"
             }
-        },    
-        "notes":{
-            "note1":{
+        ],    
+        "notes":[
+            {
                 "date": "3/14/2023",
-                "note": "/where is the pie?",
+                "note": "where is the pie?",
                 "photo": "Pie_note.jpeg"
             }
-        },
+        ],
         "orderPhotos":{
             "preworkPhoto":"prework_3/13/23.jpeg",
             "postworkPhoto":"postwork_3/16/23.jpeg"
         }
-    }    
-}
+    } 
+}   

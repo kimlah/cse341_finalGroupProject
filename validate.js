@@ -72,11 +72,53 @@ const validatedEquipment = async (req, res, next) => {
 }
 
 const validatedWorkOrder = async (req, res, next) => {
+    const loc = {
+        "Street": "required|string",
+        "City": "required|string",
+        "State": "required|string",
+        "zipCode": "required|integer"
+    };
+
+
+    const cont = {
+        "name": "required|string",
+        "phoneNumber": "required|phonenumber",
+        "email": "required|email"
+    };
+
+
+    const task = {
+        "instructions": "required|string",
+        "equipment": "required|string"
+    };
+
+
+    const note = {
+        "date": "date",
+        "note": "string",
+        "photo": "string"
+    };
+
+    const photos = {
+        "preworkPhoto": "string",
+        "postworkPhoto": "string"
+    };
+    
+    const conts = [cont];
+    const tasks = [task];
+    const notes = [note]
+
     const validationRule = {
-        "firstName": "string",
-        "lastName": "string",
-        "level": "required|string",
-        "projectsAssigned": "string"
+        "todaysDate": "required|date",
+        "appointmentDate": "required|date",
+        "dueDate": "date",
+        "completeDate": "date",
+        "location": loc,
+        "contacts": "array",
+        "tasks": "array",
+        "notes": "array",
+        "orderPhotos": photos
+
     };
 
     await validator(req.body, validationRule, {}, (err, status) => {
