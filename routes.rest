@@ -128,7 +128,7 @@ DELETE https://cse341-project2-k61i.onrender.com/equipment HTTP/1.1
 ####################################################################
 
 ### POST route for new workorder
-POST http://localhost:8080/workorder HTTP/1.1
+POST https://cse341-finalproject-yq22.onrender.com/workorder HTTP/1.1
 content-type: application/json
 
 {
@@ -174,13 +174,13 @@ content-type: application/json
 }
 
 ### GET all workorders
-GET http://localhost:8080/workorder
+GET https://cse341-finalproject-yq22.onrender.com/workorder
 
 ### GET workerorder by id
-GET http://localhost:8080/workorder/6416986737770058e9daee35
+GET https://cse341-finalproject-yq22.onrender.com/workorder/6416986737770058e9daee35
 
 ### PUT for updating workorder based on id
-PUT http://localhost:8080/workorder/6416986737770058e9daee35 HTTP/1.1
+PUT https://cse341-finalproject-yq22.onrender.com/workorder/6416986737770058e9daee35 HTTP/1.1
 content-type: application/json
 
 {
@@ -221,4 +221,4 @@ content-type: application/json
 }
 
 ### DELETE by workorder by ID
-DELETE http://localhost:8080/workorder/64169eba197c89e6a282154e HTTP/1.1
+DELETE https://cse341-finalproject-yq22.onrender.com/workorder/64169eba197c89e6a282154e HTTP/1.1
