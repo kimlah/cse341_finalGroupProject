@@ -3,11 +3,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
   // #swagger.tags = ['Administrator']
-  const result = await mongodb
-  .getDb()
-  .db('workOrderProject')
-  .collection('admins')
-  .find();
+  const result = await mongodb.getDb().db('workOrderProject').collection('admins').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
@@ -16,8 +12,9 @@ const getAll = async (req, res, next) => {
 
 const getSingle = async (req, res, next) => {
   // #swagger.tags = ['Administrator']
-  if (ObjectId.isValid(req.id)) 
-  {return res.status(400).send("Invalid object id");}
+  if (ObjectId.isValid(req.id)) {
+    return res.status(400).send('Invalid object id');
+  }
   const userId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDb()
@@ -30,7 +27,7 @@ const getSingle = async (req, res, next) => {
   });
 };
 
-const createUser = async (req,res,next) => {
+const createUser = async (req, res, next) => {
   // #swagger.tags = ['Administrator']
   const user = {
     firstName: req.body.firstName,
@@ -41,27 +38,28 @@ const createUser = async (req,res,next) => {
     level: req.body.level,
     projectsAssigned: req.body.projectsAssigned
   };
-  try{
+  try {
     const response = await mongodb
-    .getDb()
-    .db('workOrderProject')
-    .collection('admins')
-    .insertOne(user);
+      .getDb()
+      .db('workOrderProject')
+      .collection('admins')
+      .insertOne(user);
     if (response.acknowledged) {
       res.status(201).json(response);
     }
-  }catch (error) {
+  } catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while creating the user.')
-      })
+      message: response.error || 'Some error occurred while creating the user.'
+    });
   }
 };
 
-const updateUser = async (req,res,next) => {
+const updateUser = async (req, res, next) => {
   // #swagger.tags = ['Administrator']
-  if (ObjectId.isValid(req.id)) 
-  {return res.status(400).send("Invalid object id");}
+  if (ObjectId.isValid(req.id)) {
+    return res.status(400).send('Invalid object id');
+  }
   const userId = new ObjectId(req.params.id);
   const user = {
     firstName: req.body.firstName,
@@ -72,47 +70,46 @@ const updateUser = async (req,res,next) => {
     level: req.body.level,
     projectsAssigned: req.body.projectsAssigned
   };
-   try{
+  try {
     const response = await mongodb
-    .getDb()
-    .db('workOrderProject')
-    .collection('admins')
-    .replaceOne({ _id: userId }, user);
+      .getDb()
+      .db('workOrderProject')
+      .collection('admins')
+      .replaceOne({ _id: userId }, user);
     console.log(response);
     if (response.modifiedCount > 0) {
       res.status(204).send();
-    } 
-   } catch (error){
+    }
+  } catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while updating the user.')
-      })
-    }
+      message: response.error || 'Some error occurred while updating the user.'
+    });
+  }
 };
 
-const deleteUser = async (req,res,next) => {
+const deleteUser = async (req, res, next) => {
   // #swagger.tags = ['Administrator']
-  if (ObjectId.isValid(req.id)) 
-  {return res.status(400).send("Invalid object id");}
+  if (ObjectId.isValid(req.id)) {
+    return res.status(400).send('Invalid object id');
+  }
   const userId = new ObjectId(req.params.id);
-  try{
+  try {
     const response = await mongodb
-    .getDb()
-    .db('workOrderProject')
-    .collection('admins')
-    .remove({ _id: userId }, true);
+      .getDb()
+      .db('workOrderProject')
+      .collection('admins')
+      .remove({ _id: userId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
-      res.status(204).send(); 
+      res.status(204).send();
     }
-  }catch (error){
+  } catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while deleting the user.')
-      })
-    }
+      message: response.error || 'Some error occurred while deleting the user.'
+    });
+  }
 };
 
-
-
-module.exports = {getAll, getSingle, createUser, updateUser, deleteUser};
+module.exports = { getAll, getSingle, createUser, updateUser, deleteUser };

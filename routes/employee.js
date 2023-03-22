@@ -15,5 +15,4 @@ router.put('/:id', validator.validatedEmployee, employeeController.updateE);
 
 router.delete('/:id', employeeController.deleteE);
 
-
 module.exports = router;

@@ -1,50 +1,50 @@
 {
-    "workOrder1":{
-        "todaysDate": "03/09/2023",
-        "appointmentDate": "03/13/2023",
-        "dueDate": "03/24/2023",
-        "completeDate": "03/16/23",
-        "location":{
-            "Street":"543 Main St S",
-            "City": "Springfield",
-            "State": "Ohio",
-            "zipCode": 45501
-        },
-        "contacts":[
-            {
-                "name": "Bob Howdy",
-                "phoneNumber": "986-555-3221",
-                "email": "movinit@test.com"
-            }
-        ],
-        "tasks": [
-            {
-                "instructions":"Dig a trench 1' wide x 20' long x 2' deep",
-                "equipment": "spade shovel"
-            },
-            {
-                "instructions":"Place pipe conduit in trench",
-                "equipment": ""
-            },
-            {
-                "instructions":"Connect conduit to exist network",
-                "equipment": "cable spicer"
-            },
-            {
-                "instructions":"cover conduit with exarted solil",
-                "equipment": "cable spicer"
-            }
-        ],    
-        "notes":[
-            {
-                "date": "3/14/2023",
-                "note": "where is the pie?",
-                "photo": "Pie_note.jpeg"
-            }
-        ],
-        "orderPhotos":{
-            "preworkPhoto":"prework_3/13/23.jpeg",
-            "postworkPhoto":"postwork_3/16/23.jpeg"
-        }
-    } 
-}   
+  "workOrder1": {
+    "todaysDate": "03/09/2023",
+    "appointmentDate": "03/13/2023",
+    "dueDate": "03/24/2023",
+    "completeDate": "03/16/23",
+    "location": {
+      "Street": "543 Main St S",
+      "City": "Springfield",
+      "State": "Ohio",
+      "zipCode": 45501
+    },
+    "contacts": [
+      {
+        "name": "Bob Howdy",
+        "phoneNumber": "986-555-3221",
+        "email": "movinit@test.com"
+      }
+    ],
+    "tasks": [
+      {
+        "instructions": "Dig a trench 1' wide x 20' long x 2' deep",
+        "equipment": "spade shovel"
+      },
+      {
+        "instructions": "Place pipe conduit in trench",
+        "equipment": ""
+      },
+      {
+        "instructions": "Connect conduit to exist network",
+        "equipment": "cable spicer"
+      },
+      {
+        "instructions": "cover conduit with exarted solil",
+        "equipment": "cable spicer"
+      }
+    ],
+    "notes": [
+      {
+        "date": "3/14/2023",
+        "note": "where is the pie?",
+        "photo": "Pie_note.jpeg"
+      }
+    ],
+    "orderPhotos": {
+      "preworkPhoto": "prework_3/13/23.jpeg",
+      "postworkPhoto": "postwork_3/16/23.jpeg"
+    }
+  }
+}
