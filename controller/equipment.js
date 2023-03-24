@@ -3,11 +3,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
   // #swagger.tags = ['Equipment']
-  const result = await mongodb
-  .getDb()
-  .db('workOrderProject')
-  .collection('equipment')
-  .find();
+  const result = await mongodb.getDb().db('workOrderProject').collection('equipment').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
@@ -16,8 +12,9 @@ const getAll = async (req, res, next) => {
 
 const getSingle = async (req, res, next) => {
   // #swagger.tags = ['Equipment']
-  if (ObjectId.isValid(req.id)) 
-  {return res.status(400).send("Invalid object id");}
+  if (ObjectId.isValid(req.id)) {
+    return res.status(400).send('Invalid object id');
+  }
   const equipmentId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDb()
@@ -30,7 +27,7 @@ const getSingle = async (req, res, next) => {
   });
 };
 
-const createEquipment = async (req,res,next) => {
+const createEquipment = async (req, res, next) => {
   // #swagger.tags = ['Equipment']
   const equipment = {
     equipmentName: req.body.equipmentName,
@@ -41,27 +38,28 @@ const createEquipment = async (req,res,next) => {
     location: req.body.location,
     notes: req.body.notes
   };
-  try{
+  try {
     const response = await mongodb
-    .getDb()
-    .db('workOrderProject')
-    .collection('equipment')
-    .insertOne(equipment);
+      .getDb()
+      .db('workOrderProject')
+      .collection('equipment')
+      .insertOne(equipment);
     if (response.acknowledged) {
       res.status(201).json(response);
     }
-  }catch (error) {
+  } catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while creating the equipment.')
-      })
+      message: response.error || 'Some error occurred while creating the equipment.'
+    });
   }
 };
 
-const updateEquipment = async (req,res,next) => {
+const updateEquipment = async (req, res, next) => {
   // #swagger.tags = ['Equipment']
-  if (ObjectId.isValid(req.id)) 
-  {return res.status(400).send("Invalid object id");}
+  if (ObjectId.isValid(req.id)) {
+    return res.status(400).send('Invalid object id');
+  }
   const equipmentId = new ObjectId(req.params.id);
   const equipment = {
     equipmentName: req.body.equipmentName,
@@ -72,47 +70,46 @@ const updateEquipment = async (req,res,next) => {
     location: req.body.location,
     notes: req.body.notes
   };
-   try{
+  try {
     const response = await mongodb
-    .getDb()
-    .db('workOrderProject')
-    .collection('equipment')
-    .replaceOne({ _id: equipmentId }, equipment);
+      .getDb()
+      .db('workOrderProject')
+      .collection('equipment')
+      .replaceOne({ _id: equipmentId }, equipment);
     console.log(response);
     if (response.modifiedCount > 0) {
       res.status(204).send();
-    } 
-   } catch (error){
+    }
+  } catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while updating the equipment.')
-      })
-    }
+      message: response.error || 'Some error occurred while updating the equipment.'
+    });
+  }
 };
 
-const deleteEquipment = async (req,res,next) => {
+const deleteEquipment = async (req, res, next) => {
   // #swagger.tags = ['Equipment']
-  if (ObjectId.isValid(req.id)) 
-  {return res.status(400).send("Invalid object id");}
+  if (ObjectId.isValid(req.id)) {
+    return res.status(400).send('Invalid object id');
+  }
   const equipmentId = new ObjectId(req.params.id);
-  try{
+  try {
     const response = await mongodb
-    .getDb()
-    .db('workOrderProject')
-    .collection('equipment')
-    .remove({ _id: equipmentId }, true);
+      .getDb()
+      .db('workOrderProject')
+      .collection('equipment')
+      .remove({ _id: equipmentId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
-      res.status(204).send(); 
+      res.status(204).send();
     }
-  }catch (error){
+  } catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while deleting the equipment.')
-      })
-    }
+      message: response.error || 'Some error occurred while deleting the equipment.'
+    });
+  }
 };
 
-
-
-module.exports = {getAll, getSingle, createEquipment, updateEquipment, deleteEquipment};
+module.exports = { getAll, getSingle, createEquipment, updateEquipment, deleteEquipment };

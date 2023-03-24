@@ -3,11 +3,8 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
   // #swagger.tags = ['Work Orders']
-  const result = await mongodb
-  .getDb()
-  .db('workOrderProject')
-  .collection('workOrders')
-  .find();
+  // #swagger.description = "This reads all the data in workorders"
+  const result = await mongodb.getDb().db('workOrderProject').collection('workOrders').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
@@ -16,8 +13,10 @@ const getAll = async (req, res, next) => {
 
 const getSingle = async (req, res, next) => {
   // #swagger.tags = ['Work Orders']
-  if (ObjectId.isValid(req.id)) 
-  {return res.status(400).send("Invalid object id");}
+  // #swagger.description = "This reads the data in workorder of requested id"
+  if (ObjectId.isValid(req.id)) {
+    return res.status(400).send('Invalid object id');
+  }
   const userId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDb()
@@ -30,9 +29,13 @@ const getSingle = async (req, res, next) => {
   });
 };
 
-const createToDo = async (req,res,next) => {
+const createWorkOrder = async (req, res, next) => {
   // #swagger.tags = ['Work Orders']
-  const todo = {
+  // #swagger.description = "This creates a new workorder"
+  if (ObjectId.isValid(req.id)) {
+    return res.status(400).send('Invalid object id');
+  }
+  const WO = {
     todaysDate: req.body.todaysDate,
     appointmentDate: req.body.appointmentDate,
     dueDate: req.body.dueDate,
@@ -42,30 +45,32 @@ const createToDo = async (req,res,next) => {
     tasks: req.body.tasks,
     notes: req.body.notes,
     orderPhotos: req.body.orderPhotos
-    };
-  try{
+  };
+  try {
     const response = await mongodb
-    .getDb()
-    .db('workOrderProject')
-    .collection('workOrders')
-    .insertOne(todo);
+      .getDb()
+      .db('workOrderProject')
+      .collection('workOrders')
+      .insertOne(WO);
     if (response.acknowledged) {
       res.status(201).json(response);
     }
-  }catch (error) {
+  } catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while creating the todo.')
-      })
+      message: response.error || 'Some error occurred while creating the workorder.'
+    });
   }
 };
 
-const updateToDo = async (req,res,next) => {
+const updateWorkOrder = async (req, res, next) => {
   // #swagger.tags = ['Work Orders']
-  if (ObjectId.isValid(req.id)) 
-  {return res.status(400).send("Invalid object id");}
+  // #swagger.description = "This updates a workorder with an existing id"
+  if (ObjectId.isValid(req.id)) {
+    return res.status(400).send('Invalid object id');
+  }
   const userId = new ObjectId(req.params.id);
-  const todo = {
+  const WO = {
     todaysDate: req.body.todaysDate,
     appointmentDate: req.body.appointmentDate,
     dueDate: req.body.dueDate,
@@ -75,48 +80,48 @@ const updateToDo = async (req,res,next) => {
     tasks: req.body.tasks,
     notes: req.body.notes,
     orderPhotos: req.body.orderPhotos
-    };
-   try{
+  };
+  try {
     const response = await mongodb
-    .getDb()
-    .db('workOrderProject')
-    .collection('workOrders')
-    .replaceOne({ _id: userId }, todo);
+      .getDb()
+      .db('workOrderProject')
+      .collection('workOrders')
+      .replaceOne({ _id: userId }, WO);
     console.log(response);
     if (response.modifiedCount > 0) {
       res.status(204).send();
-    } 
-   } catch (error){
+    }
+  } catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while updating the todo.')
-      })
-    }
+      message: response.error || 'Some error occurred while updating the workorder.'
+    });
+  }
 };
 
-const deleteToDo = async (req,res,next) => {
+const deleteWorkOrder = async (req, res, next) => {
   // #swagger.tags = ['Work Orders']
-  if (ObjectId.isValid(req.id)) 
-  {return res.status(400).send("Invalid object id");}
+  // #swagger.description = "This deletes a workorder with an existing id"
+  if (ObjectId.isValid(req.id)) {
+    return res.status(400).send('Invalid object id');
+  }
   const userId = new ObjectId(req.params.id);
-  try{
+  try {
     const response = await mongodb
-    .getDb()
-    .db('workOrderProject')
-    .collection('workOrders')
-    .remove({ _id: userId }, true);
+      .getDb()
+      .db('workOrderProject')
+      .collection('workOrders')
+      .remove({ _id: userId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
-      res.status(204).send(); 
+      res.status(204).send();
     }
-  }catch (error){
+  } catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while deleting the contact.')
-      })
-    }
+      message: response.error || 'Some error occurred while deleting the workorder.'
+    });
+  }
 };
 
-
-
-module.exports = {getAll, getSingle, createToDo, updateToDo, deleteToDo};
+module.exports = { getAll, getSingle, createWorkOrder, updateWorkOrder, deleteWorkOrder };

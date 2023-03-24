@@ -1,13 +1,12 @@
-
 const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
     title: 'My API',
-    description: 'Work Orders API',
+    description: 'Work Orders API'
   },
   host: 'cse341-finalproject-yq22.onrender.com',
-  schemes: ['https'],
+  schemes: ['https']
 };
 
 const outputFile = './swagger.json';

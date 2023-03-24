@@ -1,74 +1,47 @@
 {
-    "equipment1": {
-        "equipmentName": "Wet Dry Vac",
-        "datePurchased": "02/06/2019",
-        "maintenance": [
-
-        ],
-        "available": "true",
-        "pastWorkOrders": [
-            "345678",
-            "901234"
-        ],
-        "location": "bay4",
-        "notes": ""
-    },
-    "equipment2": {
-        "equipmentName": "12ft Ladder",
-        "datePurchased": "06/25/2018",
-        "maintenance": [
-
-        ],
-        "available": "true",
-        "pastWorkOrders": [
-            "456789",
-            "234567"
-        ],
-        "location": "bay2",
-        "notes": ""
-    },
-    "equipment3": {
-        "equipmentName": "20ft Ladder",
-        "datePurchased": "01/09/2019",
-        "maintenance": [
-
-        ],
-        "available": "true",
-        "pastWorkOrders": [
-            "678901",
-            "012345"
-        ],
-        "location": "bay2",
-        "notes": ""
-    },
-    "equipment4": {
-        "equipmentName": "Circular Saw",
-        "datePurchased": "10/15/2020",
-        "maintenance": [
-            "07/01/2021-new blade",
-            "10/07/2022-new blade"
-        ],
-        "available": "true",
-        "pastWorkOrders": [
-            "456789",
-            "012356"
-        ],
-        "location": "bay 6",
-        "notes": ""
-    },
-    "equipment5": {
-        "equipmentName": "Riding Lawnmower",
-        "datePurchased": "06/02/2021",
-        "maintenance": [
-            
-        ],
-        "available": "true",
-        "pastWorkOrders": [
-            "012345",
-            "678901",
-            "234567"
-        ],
-        "location": "bay 10",
-        "notes": ""
-    }
+  "equipment1": {
+    "equipmentName": "Wet Dry Vac",
+    "datePurchased": "02/06/2019",
+    "maintenance": [],
+    "available": "true",
+    "pastWorkOrders": ["345678", "901234"],
+    "location": "bay4",
+    "notes": ""
+  },
+  "equipment2": {
+    "equipmentName": "12ft Ladder",
+    "datePurchased": "06/25/2018",
+    "maintenance": [],
+    "available": "true",
+    "pastWorkOrders": ["456789", "234567"],
+    "location": "bay2",
+    "notes": ""
+  },
+  "equipment3": {
+    "equipmentName": "20ft Ladder",
+    "datePurchased": "01/09/2019",
+    "maintenance": [],
+    "available": "true",
+    "pastWorkOrders": ["678901", "012345"],
+    "location": "bay2",
+    "notes": ""
+  },
+  "equipment4": {
+    "equipmentName": "Circular Saw",
+    "datePurchased": "10/15/2020",
+    "maintenance": ["07/01/2021-new blade", "10/07/2022-new blade"],
+    "available": "true",
+    "pastWorkOrders": ["456789", "012356"],
+    "location": "bay 6",
+    "notes": ""
+  },
+  "equipment5": {
+    "equipmentName": "Riding Lawnmower",
+    "datePurchased": "06/02/2021",
+    "maintenance": [],
+    "available": "true",
+    "pastWorkOrders": ["012345", "678901", "234567"],
+    "location": "bay 10",
+    "notes": ""
+  }
 }
