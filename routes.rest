@@ -122,3 +122,103 @@ content-type: application/json
 
 ### DELETE by equipment ID
 DELETE https://cse341-project2-k61i.onrender.com/equipment HTTP/1.1
+
+####################################################################
+### Workorders ###
+####################################################################
+
+### POST route for new workorder
+POST https://cse341-finalproject-yq22.onrender.com/workorder HTTP/1.1
+content-type: application/json
+
+{
+    "todaysDate": "03/10/2023",
+    "appointmentDate": "03/14/2023",
+    "dueDate": "03/24/2023",
+    "completeDate": "",
+    "location": {
+        "Street": "987 River Rd",
+        "City": "Dowville",
+        "State": "Iowa",
+        "zipCode": 35632
+    },
+    "contacts": [
+        {
+            "name": "Howard Minto",
+            "phoneNumber": "986-556-9325",
+            "email": "nonoemail@test.com"
+        },
+        {
+            "name": "Becky Minto",
+            "phoneNumber": "986-556-9326",
+            "email": "gogoemail@test.com"
+        }
+    ],
+    "tasks": [
+        {
+            "instructions": "Paint front door of their home",
+            "equipment": "bucket, brushes[3]"
+        }
+    ],
+    "notes": [
+        {
+            "date": "",
+            "note": "",
+            "photo": ""
+        }
+    ],
+    "orderPhotos": {
+        "preworkPhoto": "prework_3/14/23.jpeg",
+        "postworkPhoto": ""
+    }
+}
+
+### GET all workorders
+GET https://cse341-finalproject-yq22.onrender.com/workorder
+
+### GET workerorder by id
+GET https://cse341-finalproject-yq22.onrender.com/workorder/6416986737770058e9daee35
+
+### PUT for updating workorder based on id
+PUT https://cse341-finalproject-yq22.onrender.com/workorder/6416986737770058e9daee35 HTTP/1.1
+content-type: application/json
+
+{
+    "todaysDate": "03/10/2023",
+    "appointmentDate": "03/14/2023",
+    "dueDate": "03/24/2023",
+    "completeDate": "03/23/2023",
+    "location": {
+        "Street": "987 River Rd",
+        "City": "Dowville",
+        "State": "Iowa",
+        "zipCode": 35632
+    },
+    "contacts": [
+        {
+            "name": "Howard Minto",
+            "phoneNumber": "986-556-9325",
+            "email": "nonoemail@test.com"
+        }
+    ],
+    "tasks": [
+        {
+            "instructions": "Paint front door of their home",
+            "equipment": "bucket, brushes[3]"
+        }
+    ],
+    "notes": [
+        {
+            "date": "",
+            "note": "",
+            "photo": ""
+        }
+    ],
+    "orderPhotos": {
+        "preworkPhoto": "prework_3/14/23.jpeg",
+        "postworkPhoto": ""
+    }
+}
+
+### DELETE by workorder by ID
+DELETE https://cse341-finalproject-yq22.onrender.com/workorder/64169eba197c89e6a282154e HTTP/1.1

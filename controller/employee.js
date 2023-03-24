@@ -3,11 +3,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
   // #swagger.tags = ['Employee']
-  const result = await mongodb
-  .getDb()
-  .db('workOrderProject')
-  .collection('employees')
-  .find();
+  const result = await mongodb.getDb().db('workOrderProject').collection('employees').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
@@ -16,8 +12,9 @@ const getAll = async (req, res, next) => {
 
 const getSingle = async (req, res, next) => {
   // #swagger.tags = ['Employee']
-  if (ObjectId.isValid(req.id)) 
-  {return res.status(400).send("Invalid object id");}
+  if (ObjectId.isValid(req.id)) {
+    return res.status(400).send('Invalid object id');
+  }
   const userId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDb()
@@ -30,7 +27,7 @@ const getSingle = async (req, res, next) => {
   });
 };
 
-const employee = async (req,res,next) => {
+const employee = async (req, res, next) => {
   // #swagger.tags = ['Employee']
   const employee = {
     firstName: req.body.firstName,
@@ -38,75 +35,75 @@ const employee = async (req,res,next) => {
     level: req.body.level,
     projectAssigned: req.body.projectAssigned
   };
-  try{
+  try {
     const response = await mongodb
-    .getDb()
-    .db('workOrderProject')
-    .collection('employees')
-    .insertOne(employee);
+      .getDb()
+      .db('workOrderProject')
+      .collection('employees')
+      .insertOne(employee);
     if (response.acknowledged) {
       res.status(201).json(response);
     }
-  }catch (error) {
+  } catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while creating the employee.')
-      })
+      message: response.error || 'Some error occurred while creating the employee.'
+    });
   }
 };
 
-const updateE = async (req,res,next) => {
+const updateE = async (req, res, next) => {
   // #swagger.tags = ['Employee']
-  if (ObjectId.isValid(req.id)) 
-  {return res.status(400).send("Invalid object id");}
+  if (ObjectId.isValid(req.id)) {
+    return res.status(400).send('Invalid object id');
+  }
   const userId = new ObjectId(req.params.id);
   const update = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     level: req.body.level,
     projectAssigned: req.body.projectAssigned
-    };
-   try{
+  };
+  try {
     const response = await mongodb
-    .getDb()
-    .db('workOrderProject')
-    .collection('employees')
-    .replaceOne({ _id: userId }, update);
+      .getDb()
+      .db('workOrderProject')
+      .collection('employees')
+      .replaceOne({ _id: userId }, update);
     console.log(response);
     if (response.modifiedCount > 0) {
       res.status(204).send();
-    } 
-   } catch (error){
+    }
+  } catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while updating the employee.')
-      })
-    }
+      message: response.error || 'Some error occurred while updating the employee.'
+    });
+  }
 };
 
-const deleteE = async (req,res,next) => {
+const deleteE = async (req, res, next) => {
   // #swagger.tags = ['Employee']
-  if (ObjectId.isValid(req.id)) 
-  {return res.status(400).send("Invalid object id");}
+  if (ObjectId.isValid(req.id)) {
+    return res.status(400).send('Invalid object id');
+  }
   const userId = new ObjectId(req.params.id);
-  try{
+  try {
     const response = await mongodb
-    .getDb()
-    .db('workOrderProject')
-    .collection('employees')
-    .remove({ _id: userId }, true);
+      .getDb()
+      .db('workOrderProject')
+      .collection('employees')
+      .remove({ _id: userId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
-      res.status(204).send(); 
+      res.status(204).send();
     }
-  }catch (error){
+  } catch (error) {
     return res.status(500).json({
       success: false,
-      message: (response.error || 'Some error occurred while deleting the employee.')
-      })
-    }
+      message: response.error || 'Some error occurred while deleting the employee.'
+    });
+  }
 };
 
-
-
-module.exports = {getAll, getSingle, employee, updateE, deleteE};
+module.exports = { getAll, getSingle, employee, updateE, deleteE };
