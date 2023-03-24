@@ -10,19 +10,12 @@
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "swagger": "node ./swagger.js",
-<<<<<<< HEAD
-    "test": "jest"
-  },
-  "jest": {
-    "collectCoverage": true
-=======
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "jest": {
     "preset": "@shelf/jest-mongodb",
     "collectCoverage": true,
     "verbose": true
->>>>>>> 556701818f573d6fd52960d34db04d5b21f49ec2
   },
   "repository": {
     "type": "git",
