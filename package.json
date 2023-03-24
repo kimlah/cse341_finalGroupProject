@@ -15,7 +15,8 @@
   "jest": {
     "preset": "@shelf/jest-mongodb",
     "collectCoverage": true,
-    "verbose": true
+    "verbose": true,
+    "coverageReporters": ["html"]
   },
   "repository": {
     "type": "git",
