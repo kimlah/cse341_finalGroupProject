@@ -1,4 +1,4 @@
-const employeeTest = require("../src/equipmentTest");
+const employeeTest = require("../src/employeeTest");
 
 test("returns false if empty", () => {
     expect(employeeTest("")).toBe(false)
