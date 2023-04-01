@@ -4,19 +4,8 @@ const swaggerDocument = require('../swagger.json');
 
 const auth0 = require ('@auth0/nextjs-auth0').withApiAuthRequired;
 const getSession = require ('@auth0/nextjs-auth0').getSession;
-
-
-
-
-module.exports = auth0 ( function
-SecretRoute (res, res) {
-    const session = getSession(req,res)
-    const user = session.user
-
-    router.use('/api-docs', swaggerUi.serve);
-    router.get('/api-docs', swaggerUi.setup(swaggerDocument));
+router.get('/api-docs', isAuthenticateMiddleware, controller.get) 
+router.use('/api-docs', swaggerUi.serve);
+router.get('/api-docs', swaggerUi.setup(swaggerDocument));
     
-    module.exports = router;
-
-})
-
+module.exports = router;

@@ -5,12 +5,19 @@
     "description": "Work Orders API",
     "version": "1.0.0"
   },
-  "host": "cse341-finalproject-yq22.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
     "https"
   ],
   "paths": {
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
     "/admin/": {
       "post": {
         "tags": [
