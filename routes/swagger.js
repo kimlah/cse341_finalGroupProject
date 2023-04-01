@@ -8,7 +8,7 @@ const getSession = require ('@auth0/nextjs-auth0').getSession;
 
 
 
-export default auth0 ( function
+module.exports = auth0 ( function
 SecretRoute (res, res) {
     const session = getSession(req,res)
     const user = session.user
