@@ -8,7 +8,7 @@ const { auth, requiresAuth } = require('express-openid-connect');
 const port = process.env.PORT || 8080;
 
 const config = {
-  authRequired: true,
+  authRequired: false,
   auth0Logout: true,
   secret: process.env.secret,
   baseURL: process.env.baseURL,
