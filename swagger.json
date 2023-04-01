@@ -7,18 +7,15 @@
   },
   "host": "cse341-finalproject-yq22.onrender.com",
   "basePath": "/",
-  "schemes": ["https"],
+  "schemes": [
+    "https"
+  ],
   "paths": {
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
     "/admin/": {
       "post": {
-        "tags": ["Administrator"],
+        "tags": [
+          "Administrator"
+        ],
         "description": "",
         "parameters": [
           {
@@ -65,9 +62,13 @@
         }
       },
       "get": {
-        "tags": ["Administrator"],
+        "tags": [
+          "Administrator"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -78,9 +79,13 @@
     },
     "/admin/{id}": {
       "get": {
-        "tags": ["Administrator"],
+        "tags": [
+          "Administrator"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -99,7 +104,9 @@
         }
       },
       "put": {
-        "tags": ["Administrator"],
+        "tags": [
+          "Administrator"
+        ],
         "description": "",
         "parameters": [
           {
@@ -155,7 +162,9 @@
         }
       },
       "delete": {
-        "tags": ["Administrator"],
+        "tags": [
+          "Administrator"
+        ],
         "description": "",
         "parameters": [
           {
@@ -180,7 +189,9 @@
     },
     "/employee/": {
       "post": {
-        "tags": ["Employee"],
+        "tags": [
+          "Employee"
+        ],
         "description": "",
         "parameters": [
           {
@@ -218,9 +229,13 @@
         }
       },
       "get": {
-        "tags": ["Employee"],
+        "tags": [
+          "Employee"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -231,9 +246,13 @@
     },
     "/employee/{id}": {
       "get": {
-        "tags": ["Employee"],
+        "tags": [
+          "Employee"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -252,7 +271,9 @@
         }
       },
       "put": {
-        "tags": ["Employee"],
+        "tags": [
+          "Employee"
+        ],
         "description": "",
         "parameters": [
           {
@@ -299,7 +320,9 @@
         }
       },
       "delete": {
-        "tags": ["Employee"],
+        "tags": [
+          "Employee"
+        ],
         "description": "",
         "parameters": [
           {
@@ -324,7 +347,9 @@
     },
     "/equipment/": {
       "post": {
-        "tags": ["Equipment"],
+        "tags": [
+          "Equipment"
+        ],
         "description": "",
         "parameters": [
           {
@@ -371,9 +396,13 @@
         }
       },
       "get": {
-        "tags": ["Equipment"],
+        "tags": [
+          "Equipment"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -384,9 +413,13 @@
     },
     "/equipment/{id}": {
       "get": {
-        "tags": ["Equipment"],
+        "tags": [
+          "Equipment"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -405,7 +438,9 @@
         }
       },
       "put": {
-        "tags": ["Equipment"],
+        "tags": [
+          "Equipment"
+        ],
         "description": "",
         "parameters": [
           {
@@ -461,7 +496,9 @@
         }
       },
       "delete": {
-        "tags": ["Equipment"],
+        "tags": [
+          "Equipment"
+        ],
         "description": "",
         "parameters": [
           {
@@ -486,7 +523,9 @@
     },
     "/workorder/": {
       "post": {
-        "tags": ["Work Orders"],
+        "tags": [
+          "Work Orders"
+        ],
         "description": "This creates a new workorder",
         "parameters": [
           {
@@ -542,9 +581,13 @@
         }
       },
       "get": {
-        "tags": ["Work Orders"],
+        "tags": [
+          "Work Orders"
+        ],
         "description": "This reads all the data in workorders",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [],
         "responses": {
           "200": {
@@ -555,9 +598,13 @@
     },
     "/workorder/{id}": {
       "get": {
-        "tags": ["Work Orders"],
+        "tags": [
+          "Work Orders"
+        ],
         "description": "This reads the data in workorder of requested id",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -576,7 +623,9 @@
         }
       },
       "put": {
-        "tags": ["Work Orders"],
+        "tags": [
+          "Work Orders"
+        ],
         "description": "This updates a workorder with an existing id",
         "parameters": [
           {
@@ -638,7 +687,9 @@
         }
       },
       "delete": {
-        "tags": ["Work Orders"],
+        "tags": [
+          "Work Orders"
+        ],
         "description": "This deletes a workorder with an existing id",
         "parameters": [
           {
