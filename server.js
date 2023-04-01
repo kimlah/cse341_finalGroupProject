@@ -25,7 +25,7 @@ app.use(auth(config));
 app
   .use(bodyParser.json())
   .use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Origin','*');
     next();
   })
   .use('/', require('./routes/index'));
@@ -38,8 +38,13 @@ mongodb.initDb((err) => {
   }
 });
 
+
+
+
 app.get('/', (req, res) => {
-   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+   res.send(req.oidc.isAuthenticated() ? 
+   '<div>Welcome {user.name}! <a href="/logout">Logout</a></div>':
+   '<a href="/login">Login</a>' );
  });
 
  app.get('/profile', requiresAuth(), (req, res) => {

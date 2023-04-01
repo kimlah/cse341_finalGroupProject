@@ -4,7 +4,9 @@ const swaggerDocument = require('../swagger.json');
 
 const auth0 = require ('@auth0/nextjs-auth0').withApiAuthRequired;
 const getSession = require ('@auth0/nextjs-auth0').getSession;
-router.get('/api-docs', isAuthenticateMiddleware, controller.get) 
+
+
+router.get('/api-docs', ) 
 router.use('/api-docs', swaggerUi.serve);
 router.get('/api-docs', swaggerUi.setup(swaggerDocument));
     
