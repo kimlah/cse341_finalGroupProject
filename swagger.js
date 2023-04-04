@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'Work Orders API'
   },
-  host: 'localhost:8080',
+  host: 'cse341-finalproject-yq22.onrender.com',
   schemes: ['https']
 };
 
