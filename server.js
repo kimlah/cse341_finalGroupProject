@@ -43,10 +43,13 @@ mongodb.initDb((err) => {
 
 app.get('/', (req, res) => {
    res.send(req.oidc.isAuthenticated() ? 
-   '<div>Welcome {user.name}! <a href="/logout">Logout</a></div>':
+   '<div>Welcome! <a href="/logout">Logout</a></div>':
    '<a href="/login">Login</a>' );
  });
 
  app.get('/profile', requiresAuth(), (req, res) => {
    res.send(JSON.stringify(req.oidc.user));
  });
+ app.get('/api-docs', requiresAuth(),  (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+});
