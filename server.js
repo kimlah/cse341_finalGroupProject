@@ -51,5 +51,5 @@ app.get('/', (req, res) => {
    res.send(JSON.stringify(req.oidc.user));
  });
  app.get('/api-docs', requiresAuth(),  (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+  res.send(req.oidc);
 });
