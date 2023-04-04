@@ -28,7 +28,7 @@ app
     res.setHeader('Access-Control-Allow-Origin','*');
     next();
   })
-  .use('/', require('./routes/index'));
+  .use('/', requiresAuth(), require('./routes/index'));
 mongodb.initDb((err) => {
   if (err) {
     console.log(err);
